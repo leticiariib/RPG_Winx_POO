@@ -41,7 +41,7 @@ class Personagem{
         bool estaVivo() const {return vida > 0;}
 
         void aplicarEfeito(EfeitoContinuo& efeito) {
-           efeitos_ativos.push_back(efeito);
+           efeitos.push_back(efeito);
            cout << nome << " recebeu efeito: " << efeito.tipo << " por "
               << efeito.duracao << " turnos.\n";
         }
