@@ -7,19 +7,19 @@
 
 using namespace std;
 
-class Habilidade{
-    protected:
-        string nome;
-        float dano_base;
-        float custo_magia;
-    public:
-        Habilidade(string n, float d, float cm)
-            : nome{n}, dano_base{d}, custo_magia{cm} {}
-       
-        virtual void aplicar(Personagem& atacante, Personagem& alvo) = 0;
-       
-        string getNome() const {return nome;}
-        float getCusto() const {return custo_magia;} 
+class Habilidade {
+protected:
+    string nome;
+    float dano_base;
+    float custo_magia;
+
+public:
+    Habilidade(string n, float d, float cm);
+
+    virtual void aplicar(Personagem& atacante, Personagem& alvo) = 0;
+
+    string getNome() const;
+    float getCusto() const;
 };
 
 #endif
