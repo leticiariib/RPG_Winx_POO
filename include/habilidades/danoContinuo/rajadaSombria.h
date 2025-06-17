@@ -1,0 +1,12 @@
+#ifndef RAJADA_SOMBRIA_H
+#define RAJADA_SOMBRIA_H
+
+#include "habilidade.h"
+
+class RajadaSombria : public Habilidade {
+public:
+    RajadaSombria();
+    void aplicar(Personagem& atacante, Personagem& alvo) override;
+};
+
+#endif

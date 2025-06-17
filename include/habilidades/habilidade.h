@@ -17,6 +17,7 @@ public:
     Habilidade(string n, float d, float cm);
 
     virtual void aplicar(Personagem& atacante, Personagem& alvo) = 0;
+    virtual void mostrarDetalhes() const = 0;
 
     string getNome() const;
     float getCusto() const;
