@@ -1,7 +1,12 @@
 #include "personagem.h"
+#include <cmath> 
 
-Personagem::Personagem(string n, int v, float m, float am, float d, int velo)
-    : nome{n}, vida{v}, magia{m}, ataque_magico{am}, defesa{d}, velocidade{velo} {}
+Personagem::~Personagem() {
+    for (Habilidade* hab : habilidades) {
+        delete hab;
+    }
+    habilidades.clear();
+}
 
 void Personagem::receberDano(float dano) {
     if (dano < 0) dano = 0;
@@ -23,16 +28,70 @@ void Personagem::aplicarEfeito(EfeitoContinuo& efeito) {
          << efeito.duracao << " turnos.\n";
 }
 
-void Personagem::usarHabilidade(Habilidade& habilidade, Personagem& alvo) {
+void Personagem::ganharXP(int xpGanho) {
+    if (!estaVivo()) return;
+
+    xpAtual += xpGanho;
+    cout << nome << " ganhou " << xpGanho << " de XP!" << endl;
+
+    // Loop para o caso de o personagem subir múltiplos níveis de uma vez
+    while (xpAtual >= xpParaProximoNivel) {
+        subirDeNivel();
+    }
+}
+
+void Personagem::subirDeNivel() {
+    nivel++;
+    cout << "----------------------------------------" << endl;
+    cout << nome << " subiu para o Nível " << nivel << "!" << endl;
+    cout << "----------------------------------------" << endl;
+    
+    xpAtual -= xpParaProximoNivel; 
+    xpParaProximoNivel = static_cast<int>(xpParaProximoNivel * 1.5);
+
+    //valores de atributos aumentados por subir de nivel
+    int crescimentoVida = 15;
+    int crescimentoMagia = 10;
+    float crescimentoAtaque = 5;
+    float crescimentoDefesa = 3;
+
+    vidaMaxima += crescimentoVida;
+    magiaMaxima += crescimentoMagia;
+    ataque_magico += crescimentoAtaque;
+    defesa += crescimentoDefesa;
+    defesaBase = defesa;
+
+    // recupera toda a vida e magia ao subir de nível
+    vida = vidaMaxima;
+    magia = magiaMaxima;
+
+    cout << "Vida Máxima: +" << crescimentoVida << endl;
+    cout << "Magia Máxima: +" << crescimentoMagia << endl;
+    cout << "Ataque Mágico: +" << crescimentoAtaque << endl;
+    cout << "Defesa: +" << crescimentoDefesa << endl;
+
+    checarDesbloqueioHabilidades();
+}
+
+void Personagem::usarHabilidade(int indiceHabilidade, Personagem& alvo) {
+    if (indiceHabilidade < 0 || indiceHabilidade >= habilidades.size()) {
+        cout << "Índice de habilidade inválido!" << endl;
+        return;
+    }
+
+    Habilidade* habilidadeEscolhida = habilidades[indiceHabilidade];
+    
     float fatorReducao = getFatorReducaoCustoMagia();
-    float custoFinal = habilidade.getCusto() * fatorReducao;
+    float custoFinal = habilidadeEscolhida->getCusto() * fatorReducao;
 
     if (magia >= custoFinal) {
         magia -= custoFinal;
-        cout << nome << " usou a habilidade '" << habilidade.getNome() << "' gastando " << custoFinal << " de magia." << endl;
-        habilidade.aplicar(*this, alvo); 
+        cout << nome << " usou '" << habilidadeEscolhida->getNome() 
+             << "' gastando " << custoFinal << " de magia." << endl;
+        habilidadeEscolhida->aplicar(*this, alvo);
     } else {
-        cout << nome << " não tem magia suficiente para usar '" << habilidade.getNome() << "'." << endl;
+        cout << nome << " não tem magia suficiente para usar '" << habilidadeEscolhida->getNome() 
+             << "'. Custo necessário: " << custoFinal << ", Magia disponível: " << round(magia) << endl;
     }
 }
 

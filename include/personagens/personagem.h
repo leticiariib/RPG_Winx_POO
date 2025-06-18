@@ -31,9 +31,16 @@ class Personagem {
         float defesaBase;
         int velocidade;
         float ataque_magico;
-        float reducaoDeDano = 0.0f;  
+        float reducaoDeDano = 0.0f;
+        int nivel;
+        int xpAtual;
+        int xpParaProximoNivel;
+        vector<Habilidade*> habilidades;  
         vector<EfeitoContinuo> efeitos;
         vector<BuffTemporario> buffs; 
+
+        void subirDeNivel();
+        virtual void checarDesbloqueioHabilidades() {} 
     public:
         Personagem(string nome, int vidaInicial, float magiaInicial, float defesaInicial, float ataqueMagicoInicial, int velocidadeInicial) 
             : nome(nome),
@@ -44,20 +51,26 @@ class Personagem {
             defesa(defesaInicial),
             defesaBase(defesaInicial),
             ataque_magico(ataqueMagicoInicial),
-            velocidade(velocidadeInicial) {}
+            velocidade(velocidadeInicial),
+            nivel(1), xpAtual(0), xpParaProximoNivel(100) {}
 
-        virtual void receberDano(float dano);
-        void reduzirVelocidade(int quantidade);
-        bool estaVivo() const { return vida > 0; }
-        void aplicarEfeito(EfeitoContinuo& efeito);
-        void atualizarTurno();
-        virtual void mostarStatus() const;
+         virtual ~Personagem();
+
+         virtual void receberDano(float dano);
+         void reduzirVelocidade(int quantidade);
+         bool estaVivo() const { return vida > 0; }
+         void aplicarEfeito(EfeitoContinuo& efeito);
+         void atualizarTurno();
+         virtual void mostarStatus() const;
+         void ganharXP(int xpGanho);
 
         // getters 
         string getNome() const { return nome; }
         float getAtaque() const { return ataque_magico; }
         float getDefesa() const { return defesa; }
         int getVelocidade() const { return velocidade; }
+        int getNivel() const { return nivel; }
+        const vector<Habilidade*>& getHabilidades() const { return habilidades; }
 
         // funções dos efeitos de itens 
         void recuperarVidaPercentual(float porcentagem);
@@ -65,7 +78,7 @@ class Personagem {
         void aumentarDefesaTemporaria(float porcentagem, int turnos);
         void adicionarReducaoDeDano(float porcentagem);
         float getFatorReducaoCustoMagia() const;
-        void usarHabilidade(Habilidade& habilidade, Personagem& alvo);
+        void usarHabilidade(int indiceHabilidade, Personagem& alvo);
         void adicionarBuff(const BuffTemporario& buff);
 
 };
