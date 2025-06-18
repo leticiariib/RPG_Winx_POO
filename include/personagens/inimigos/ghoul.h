@@ -3,6 +3,8 @@
 
 #include "inimigo.h"
 
+//inimigo p/ inicio do jogo
+
 class Ghoul : public Inimigo {
 public:
     Ghoul();

@@ -3,6 +3,7 @@
 
 #include "inimigo.h"
 
+//inimigo p/ inicio do jogo
 class MonstroDoPantano : public Inimigo {
 public:
     MonstroDoPantano();
