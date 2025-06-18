@@ -1,43 +1,62 @@
 #ifndef INVENTARIO_H
 #define INVENTARIO_H
+
 #include <iostream>
 #include <vector>
 #include <string>
+#include "item.h" 
 
-using namespace std; 
+using namespace std;
 
-template <typename T>
+template <typename T> 
 class Inventario {
     vector<T> itens;
 
-    public:
-        void adicionarItem(const T& item) {
-            itens.push_back(item);
-            cout << "Item '" << item.getNome() << "' adicionado ao inventário.\n";
+public:
+    ~Inventario() {
+        for (T item : itens) {
+            delete item;
         }
+        itens.clear();
+    }
 
-        void removerItem(const string& nome) {
-            for (auto it = itens.begin(); it != itens.end(); ++it) {
-                if (it->getNome() == nome) {
-                    itens.erase(it);
-                    cout << "Item '" << nome << "' removido do inventário.\n";
-                    return;
-                }
-            }
-            cout << "Item '" << nome << "' não encontrado no inventário.\n";
-        }
+    void adicionarItem(T item) { 
+        itens.push_back(item);
+        cout << "Item '" << item->getNome() << "' adicionado ao inventário.\n";
+    }
 
-        void mostrarItens() const {
-            if (itens.empty()) {
-                cout << "Inventário vazio.\n";
-                return;
-            }
-            cout << "Itens no inventário:\n";
-            for (const auto& item : itens) {
-                item.mostrarInfo();
-                cout << "------------------------\n";
-            }
+    T getItem(int indice) {
+        if (indice >= 0 && indice < itens.size()) {
+            return itens[indice];
         }
+        return nullptr; 
+    }
+
+    void removerItem(int indice) {
+        if (indice >= 0 && indice < itens.size()) {
+            T item = itens[indice];
+            cout << "Item '" << item->getNome() << "' consumido e removido do inventário.\n";
+            delete item; 
+            itens.erase(itens.begin() + indice);
+        }
+    }
+
+    void mostrarItens() const {
+        if (itens.empty()) {
+            cout << "Inventário vazio.\n";
+            return;
+        }
+        cout << "\n--- Itens no Inventário ---\n";
+        for (int i = 0; i < itens.size(); ++i) {
+            cout << i + 1 << ". ";
+            itens[i]->mostrarInfo(); 
+            cout << "------------------------\n";
+        }
+    }
+    
+    int getTamanho() const {
+        return itens.size();
+    }
 };
 
 #endif
