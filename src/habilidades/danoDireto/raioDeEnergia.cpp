@@ -16,3 +16,11 @@ void RaioDeEnergia::aplicar(Personagem& atacante, Personagem& alvo) {
     std::cout << atacante.getNome() << " lançou Raio de Energia causando "
               << final << " de dano em " << alvo.getNome() << ".\n";
 }
+
+void RaioDeEnergia::mostrarDetalhes() const {
+    cout << "- " << nome << " - " << endl;
+    cout << "Tipo: Dano Direto (Energia)" << endl;
+    cout << "Dano base: " << dano_base << endl;
+    cout << "Custo de magia: " << custo_magia << endl;
+    cout << "Descrição: Um raio energético que ignora 40% da defesa do alvo." << endl;
+}

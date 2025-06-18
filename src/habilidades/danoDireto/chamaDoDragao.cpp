@@ -16,3 +16,11 @@ void ChamaDoDragao::aplicar(Personagem& atacante, Personagem& alvo) {
     cout << atacante.getNome() << " lançou Chama do Dragão causando "
          << final << " de dano em " << alvo.getNome() << ".\n";
 }
+
+void ChamaDoDragao::mostrarDetalhes() const {
+    cout << "- " << nome << " - " << endl;
+    cout << "Tipo: Dano Direto (Fogo)" << endl;
+    cout << "Dano base: " << dano_base << endl;
+    cout << "Custo de magia: " << custo_magia << endl;
+    cout << "Descrição: Um poderoso ataque de fogo que ignora parte da defesa inimiga." << endl;
+}

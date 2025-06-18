@@ -7,6 +7,7 @@ class EstilhacoDeGelo : public Habilidade {
 public:
     EstilhacoDeGelo();
     void aplicar(Personagem& atacante, Personagem& alvo) override;
+    virtual void mostrarDetalhes() const override;
 };
 
 #endif

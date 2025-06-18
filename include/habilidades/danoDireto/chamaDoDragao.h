@@ -7,6 +7,7 @@ class ChamaDoDragao : public Habilidade {
 public:
     ChamaDoDragao();
     void aplicar(Personagem& atacante, Personagem& alvo) override;
+    virtual void mostrarDetalhes() const override;
 };
 
 #endif

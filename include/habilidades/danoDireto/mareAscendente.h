@@ -7,6 +7,7 @@ class MareAscendente : public Habilidade {
 public:
     MareAscendente();
     void aplicar(Personagem& atacante, Personagem& alvo) override;
+    virtual void mostrarDetalhes() const override;
 };
 
 #endif

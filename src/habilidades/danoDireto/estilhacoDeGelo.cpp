@@ -16,3 +16,11 @@ void EstilhacoDeGelo::aplicar(Personagem& atacante, Personagem& alvo) {
     std::cout << atacante.getNome() << " lançou Estilhaço de Gelo causando "
               << final << " de dano em " << alvo.getNome() << ".\n";
 }
+
+void EstilhacoDeGelo::mostrarDetalhes() const {
+    cout << "- " << nome << " - " << endl;
+    cout << "Tipo: Dano Direto (Gelo)" << endl;
+    cout << "Dano base: " << dano_base << endl;
+    cout << "Custo de magia: " << custo_magia << endl;
+    cout << "Descrição: Um ataque de gelo que perfura 50% da defesa do alvo." << endl;
+}

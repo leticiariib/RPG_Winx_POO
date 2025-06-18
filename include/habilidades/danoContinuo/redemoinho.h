@@ -7,6 +7,7 @@ class Redemoinho : public Habilidade {
 public:
     Redemoinho();
     void aplicar(Personagem& atacante, Personagem& alvo) override;
+    virtual void mostrarDetalhes() const override;
 };
 
 #endif

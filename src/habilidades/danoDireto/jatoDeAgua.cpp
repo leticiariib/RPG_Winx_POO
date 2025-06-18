@@ -15,3 +15,11 @@ void JatoDeAgua::aplicar(Personagem& atacante, Personagem& alvo) {
     cout << atacante.getNome() << " lançou Jato de Água causando "
          << final << " de dano direto.\n";
 }
+
+void JatoDeAgua::mostrarDetalhes() const {
+    cout << "- " << nome << " - " << endl;
+    cout << "Tipo: Dano Direto (Água)" << endl;
+    cout << "Dano base: " << dano_base << endl;
+    cout << "Custo de magia: " << custo_magia << endl;
+    cout << "Descrição: Um jato de água potente que duplica o ataque do usuário." << endl;
+}

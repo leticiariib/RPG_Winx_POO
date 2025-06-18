@@ -7,6 +7,7 @@ class RaioDeEnergia : public Habilidade {
 public:
     RaioDeEnergia();
     void aplicar(Personagem& atacante, Personagem& alvo) override;
+    virtual void mostrarDetalhes() const override;
 };
 
 #endif

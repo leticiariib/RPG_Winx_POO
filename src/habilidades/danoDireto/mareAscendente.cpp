@@ -18,3 +18,12 @@ void MareAscendente::aplicar(Personagem& atacante, Personagem& alvo) {
          << final << " de dano e reduziu a velocidade de "
          << alvo.getNome() << " em 10.\n";
 }
+
+void MareAscendente::mostrarDetalhes() const {
+    cout << "- " << nome << " - " << endl;
+    cout << "Tipo: Dano + Efeito (Água)" << endl;
+    cout << "Dano base: " << dano_base << endl;
+    cout << "Custo de magia: " << custo_magia << endl;
+    cout << "Efeito: Reduz velocidade do alvo em 10" << endl;
+    cout << "Descrição: Uma maré que causa dano e reduz a velocidade do inimigo." << endl;
+}
