@@ -39,6 +39,8 @@ class Personagem {
         vector<EfeitoContinuo> efeitos;
         vector<BuffTemporario> buffs; 
 
+        bool estaDefendendo = false;
+
         void subirDeNivel();
         virtual void checarDesbloqueioHabilidades() {} 
     public:
@@ -54,19 +56,25 @@ class Personagem {
             velocidade(velocidadeInicial),
             nivel(1), xpAtual(0), xpParaProximoNivel(100) {}
 
-         virtual ~Personagem();
+        virtual ~Personagem();
 
-         virtual void receberDano(float dano);
-         void reduzirVelocidade(int quantidade);
-         bool estaVivo() const { return vida > 0; }
-         void aplicarEfeito(EfeitoContinuo& efeito);
-         void atualizarTurno();
-         virtual void mostarStatus() const;
-         void ganharXP(int xpGanho);
-         void recuperarVida(float quantidade); 
+        virtual void receberDano(float dano);
+        void defender();
+        void prepararParaNovoTurno(); 
+        void reduzirVelocidade(int quantidade);
+        bool estaVivo() const { return vida > 0; }
+        virtual void mostarStatus() const;
+
+        void ganharXP(int xpGanho);
+        void recuperarVida(float quantidade); 
+         
+        void aplicarEfeito(EfeitoContinuo& efeito);
+        void atualizarTurno();
 
         // getters 
         string getNome() const { return nome; }
+        int getVida() const {return vida;}
+        float getMagia() const {return magia;}
         float getAtaque() const { return ataque_magico; }
         float getDefesa() const { return defesa; }
         int getVelocidade() const { return velocidade; }

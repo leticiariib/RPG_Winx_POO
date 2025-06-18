@@ -15,6 +15,21 @@ void Personagem::receberDano(float dano) {
     cout << nome << " recebeu " << dano << " de dano. Vida restante: " << vida << "\n";
 }
 
+void Personagem::defender() {
+    cout << nome << " está se defendendo, dobrando sua defesa para o próximo ataque!" << endl;
+    defesa *= 2; // Dobra a defesa temporariamente
+    estaDefendendo = true;
+}
+
+// chamar esse metodo no início de cada turno do personagem
+void Personagem::prepararParaNovoTurno() {
+    if (estaDefendendo) {
+        defesa = defesaBase;
+        estaDefendendo = false;
+    }
+    atualizarTurno();
+}
+
 void Personagem::reduzirVelocidade(int quantidade) {
     velocidade -= quantidade;
     if (velocidade < 0) velocidade = 0;
