@@ -149,6 +149,12 @@ void Personagem::recuperarMagiaPercentual(float porcentagem) {
     cout << nome << " recuperou " << magiaRecuperada << " pontos de magia!" << endl;
 }
 
+void Personagem::recuperarVida(float quantidade) {
+    vida += quantidade;
+    if (vida > vidaMaxima) vida = vidaMaxima;
+    cout << nome << " recuperou " << quantidade << " de vida!" << endl;
+}
+
 void Personagem::aumentarDefesaTemporaria(float porcentagem, int turnos) {
     float aumento = defesaBase * porcentagem;
     defesa += aumento;

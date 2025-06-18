@@ -63,6 +63,7 @@ class Personagem {
          void atualizarTurno();
          virtual void mostarStatus() const;
          void ganharXP(int xpGanho);
+         void recuperarVida(float quantidade); 
 
         // getters 
         string getNome() const { return nome; }
