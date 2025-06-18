@@ -13,3 +13,12 @@ void Redemoinho::aplicar(Personagem& atacante, Personagem& alvo) {
     cout << atacante.getNome() << " lançou Redemoinho. "
          << alvo.getNome() << " sofrerá " << dano << " de dano por 3 turnos.\n";
 }
+
+void Redemoinho::mostrarDetalhes() const {
+    cout << "- " << nome << " -" << endl;
+    cout << "Tipo: Dano Contínuo (Vento)" << endl;
+    cout << "Dano base por turno: 10" << endl;
+    cout << "Custo de magia: " << custo_magia << endl;
+    cout << "Duração: 3 turnos" << endl;
+    cout << "Descrição: Cria um redemoinho cortante ao redor do alvo que causa dano a cada turno." << endl;
+}
