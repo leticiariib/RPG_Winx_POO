@@ -6,7 +6,7 @@ CrescendoEstilhacante::CrescendoEstilhacante()
 
 void CrescendoEstilhacante::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.75;
-    float dano_final = dano - (alvo.getDefesa() * 0.4); // Penetra 60% da defesa
+    float dano_final = dano - (alvo.getDefesa() * 0.4); 
 
     if (dano_final < 0) dano_final = 0;
 

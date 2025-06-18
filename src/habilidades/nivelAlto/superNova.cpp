@@ -2,16 +2,16 @@
 #include <iostream>
 
 Supernova::Supernova()
-    : Habilidade("Supernova", 75, 45) {} // Dano alto, custo alto
+    : Habilidade("Supernova", 75, 45) {}
 
 void Supernova::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.7;
-    float dano_final = dano - (alvo.getDefesa() * 0.3); // Ignora um pouco de defesa
+    float dano_final = dano - (alvo.getDefesa() * 0.3); 
 
     if (dano_final < 0) dano_final = 0;
 
     alvo.receberDano(dano_final);
-    // Em um jogo mais complexo, aqui poderia aplicar um debuff de "cegueira" ou "redução de defesa"
+
     cout << atacante.getNome() << " criou uma Supernova, causando " << dano_final
          << " de dano de luz ofuscante em " << alvo.getNome() << "!\n";
 }
