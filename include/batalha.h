@@ -14,7 +14,7 @@ using namespace std;
 class Batalha {
     private:
         Personagem& jogador;
-        Inimigo& inimigo;
+        vector<Inimigo*>& inimigos; 
         Inventario<Pocao*>& inventarioPocoes;
         Inventario<Armadura*>& inventarioArmaduras;
 
@@ -25,13 +25,14 @@ class Batalha {
         void determinarOrdemDeBatalha();
         void executarTurno();
         void executarTurnoJogador();
-        void executarTurnoInimigo();
+        void executarTurnoInimigo(Inimigo*);
         void mostrarStatusBatalha() const;
         void verificarFimDeBatalha();
+        Inimigo* escolherAlvo(); 
 
     public:
-        Batalha(Personagem& j, Inimigo& i, Inventario<Pocao*>& invP, Inventario<Armadura*>& invA);
-        void iniciar();
+        Batalha(Personagem& j, vector<Inimigo*>& i, Inventario<Pocao*>& invP, Inventario<Armadura*>& invA);
+        bool iniciar();
 };
 
 #endif

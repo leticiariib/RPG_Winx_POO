@@ -1,6 +1,8 @@
 #include "missoes/controladorDeMissoes.h"
 #include <iostream>
 
+using namespace std; 
+
 ControladorDeMissoes::~ControladorDeMissoes() {
     for (auto const& [id, missao] : missoes) {
         delete missao;
@@ -15,21 +17,21 @@ void ControladorDeMissoes::adicionarMissao(Missao* novaMissao) {
 }
 
 void ControladorDeMissoes::mostrarMissoesDisponiveis() const {
-    std::cout << "\n--- Quadro de Missões Disponíveis ---" << std::endl;
+    cout << "\n--- Quadro de Missões Disponíveis ---" << endl;
     bool nenhumaDisponivel = true;
     for (auto const& [id, missao] : missoes) {
         if (missao->getEstado() == EstadoMissao::PENDENTE) {
-            std::cout << "[" << id << "] " << missao->getTitulo() << (missao->isPrincipal() ? " (Principal)" : " (Secundária)") << std::endl;
+            cout << "[" << id << "] " << missao->getTitulo() << (missao->isPrincipal() ? " (Principal)" : " (Secundária)") << endl;
             nenhumaDisponivel = false;
         }
     }
     if (nenhumaDisponivel) {
-        std::cout << "Nenhuma nova missão disponível no momento." << std::endl;
+        cout << "Nenhuma nova missão disponível no momento." << endl;
     }
 }
 
 void ControladorDeMissoes::mostrarMissoesAtivas() const {
-    std::cout << "\n--- Diário de Missões Ativas ---" << std::endl;
+    cout << "\n--- Diário de Missões Ativas ---" << endl;
      bool nenhumaAtiva = true;
     for (auto const& [id, missao] : missoes) {
         if (missao->getEstado() == EstadoMissao::ATIVA) {
@@ -38,7 +40,7 @@ void ControladorDeMissoes::mostrarMissoesAtivas() const {
         }
     }
      if (nenhumaAtiva) {
-        std::cout << "Nenhuma missão ativa no momento." << std::endl;
+        cout << "Nenhuma missão ativa no momento." << endl;
     }
 }
 

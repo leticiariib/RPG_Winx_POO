@@ -6,10 +6,11 @@
                 "${workspaceFolder}/include",
                 "${workspaceFolder}/include/personagens",
                 "${workspaceFolder}/include/habilidades",
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include/habilidades/danoDireto"
             ],
             "defines": [],
-            "compilerPath": "C:/MinGW/bin/g++.exe", 
+            "compilerPath": "C:/MinGW/bin/g++.exe",
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "windows-gcc-x64"

@@ -4,55 +4,35 @@
 #include <limits> // p/ limpar o buffer de entrada
 #include <cstdlib> 
 #include <ctime>   
+#include <cmath> 
 
-Batalha::Batalha(Personagem& j, Inimigo& i, Inventario<Pocao*>& invP, Inventario<Armadura*>& invA)
-    : jogador(j), inimigo(i), inventarioPocoes(invP), inventarioArmaduras(invA) {
+using namespace std; 
+
+Batalha::Batalha(Personagem& j, vector<Inimigo*>& i, Inventario<Pocao*>& invP, Inventario<Armadura*>& invA)
+    : jogador(j), inimigos(i), inventarioPocoes(invP), inventarioArmaduras(invA) {
     srand(time(0)); // inicializa gerador de num. aleatorios 
     determinarOrdemDeBatalha();
 }
 
 void Batalha::determinarOrdemDeBatalha() {
     filaDeTurnos.push_back(&jogador);
-    filaDeTurnos.push_back(&inimigo);
+    for (Inimigo* inimigo : inimigos) {
+        filaDeTurnos.push_back(inimigo); 
+    }
 
     // ordena ordem da batalha com base na velocidade, maior velocidade começa primeiro 
-    std::sort(filaDeTurnos.begin(), filaDeTurnos.end(), [](const Personagem* a, const Personagem* b) {
+    sort(filaDeTurnos.begin(), filaDeTurnos.end(), [](const Personagem* a, const Personagem* b) {
         return a->getVelocidade() > b->getVelocidade();
     });
 
     cout << "A ordem de batalha foi definida! " << filaDeTurnos[0]->getNome() << " age primeiro." << endl;
 }
 
-void Batalha::iniciar() {
+bool Batalha::iniciar() {
     while (!batalhaTerminou) {
         executarTurno();
     }
-}
-
-void Batalha::executarTurno() {
-    Personagem* personagemDaVez = filaDeTurnos[indiceTurnoAtual];
-
-    personagemDaVez->prepararParaNovoTurno();
-
-    //verificar se personagem sobreviveu aos efeitos continuos ou danos
-    if (!personagemDaVez->estaVivo()) {
-        verificarFimDeBatalha();
-        if (batalhaTerminou) return;
-    } else {
-        mostrarStatusBatalha();
-
-        // verifica se é o turno do jogador ou do inimigo
-        if (personagemDaVez == &jogador) {
-            executarTurnoJogador();
-        } else {
-            executarTurnoInimigo();
-        }
-    }
-    
-    verificarFimDeBatalha();
-
-    // passar para o próximo na fila
-    indiceTurnoAtual = (indiceTurnoAtual + 1) % filaDeTurnos.size();
+    return jogador.estaVivo();
 }
 
 void Batalha::executarTurnoJogador() {
@@ -92,8 +72,11 @@ void Batalha::executarTurnoJogador() {
                 cin >> escolhaHab;
 
                 if (escolhaHab > 0 && escolhaHab <= habilidades.size()) {
-                    jogador.usarHabilidade(escolhaHab - 1, inimigo);
-                    return; // Ação valida, encerra o turno.
+                    Inimigo* alvo = escolherAlvo(); 
+                    if(alvo){
+                        jogador.usarHabilidade(escolhaHab - 1, *alvo);
+                        return; // Ação valida, encerra o turno.
+                    }
                 } else {
                     cout << "Ação cancelada, voltando ao menu principal..." << endl;
                     // Não faz nada, o loop while vai repetir.
@@ -147,32 +130,69 @@ void Batalha::executarTurnoJogador() {
     } 
 }
 
-void Batalha::executarTurnoInimigo() {
-    cout << "\n--- TURNO DE " << inimigo.getNome() << "! ---" << endl;
-    if (inimigo.getHabilidades().empty()) {
-        cout << inimigo.getNome() << " nao sabe o que fazer e perde o turno." << endl;
+void Batalha::executarTurnoInimigo(Inimigo* inimigoDaVez) {
+    cout << "\n--- TURNO DE " << inimigoDaVez->getNome() << "! ---" << endl;
+    if (inimigoDaVez->getHabilidades().empty()) {
+        cout << inimigoDaVez->getNome() << " nao sabe o que fazer e perde o turno." << endl;
         return;
     }
     // jogada do "computador" simples: escolhe uma habilidade aleatória
-    int escolhaCompt = rand() % inimigo.getHabilidades().size();
-    inimigo.usarHabilidade(escolhaCompt, jogador);
+    int escolhaCompt = rand() % inimigoDaVez->getHabilidades().size();
+    inimigoDaVez->usarHabilidade(escolhaCompt, jogador);
 }
 
-void Batalha::mostrarStatusBatalha() const {
-    cout << "\n----------------------------------------" << endl;
-    cout << jogador.getNome() << " | Vida: " << jogador.getVida() << " | Magia: " << jogador.getMagia() << endl;
-    cout << inimigo.getNome() << " | Vida: " << inimigo.getVida() << " | Magia: " << inimigo.getMagia() << endl;
-    cout << "----------------------------------------" << endl;
+void Batalha::executarTurno() {
+    Personagem* personagemDaVez = filaDeTurnos[indiceTurnoAtual];
+
+    personagemDaVez->prepararParaNovoTurno();
+
+    // verifica se o personagem foi derrotado pelos efeitos contínuos (ex: veneno)
+    if (!personagemDaVez->estaVivo()) {
+        verificarFimDeBatalha();
+        indiceTurnoAtual = (indiceTurnoAtual + 1) % filaDeTurnos.size();
+        return; 
+    }
+
+    mostrarStatusBatalha();
+
+    if (personagemDaVez == &jogador) {
+        executarTurnoJogador();
+    } else {
+        executarTurnoInimigo(static_cast<Inimigo*>(personagemDaVez));
+    }
+    verificarFimDeBatalha();
+
+    indiceTurnoAtual = (indiceTurnoAtual + 1) % filaDeTurnos.size();
 }
 
 void Batalha::verificarFimDeBatalha() {
-    if (!jogador.estaVivo()) {
-        mostrarStatusBatalha();
-        cout << "\nVOCÊ FOI DERROTADO!" << endl;
-        batalhaTerminou = true;
-    } else if (!inimigo.estaVivo()) {
-        mostrarStatusBatalha();
-        cout << "\nVITORIA! " << inimigo.getNome() << " foi derrotado!" << endl;
-        batalhaTerminou = true;
+    bool todosInimigosMortos = true;
+    for (const auto& inimigo : inimigos) {
+        if (inimigo->estaVivo()) {
+            todosInimigosMortos = false;
+            break;
+        }
     }
+}
+
+Inimigo* Batalha::escolherAlvo() {
+    cout << "\nEscolha o alvo (ou 0 para cancelar):" << endl;
+    vector<Inimigo*> alvosVivos;
+    for (Inimigo* inimigo : inimigos) {
+        if (inimigo->estaVivo()) {
+            alvosVivos.push_back(inimigo);
+            cout << alvosVivos.size() << ". " << inimigo->getNome() << " (Vida: " << inimigo->getVida() << ")" << endl;
+        }
+    }
+
+    if (alvosVivos.empty()) return nullptr; // Não deveria acontecer, mas é uma segurança
+
+    int escolhaAlvo;
+    cin >> escolhaAlvo;
+    if (escolhaAlvo > 0 && escolhaAlvo <= alvosVivos.size()) {
+        return alvosVivos[escolhaAlvo - 1];
+    }
+    
+    cout << "Seleção de alvo cancelada." << endl;
+    return nullptr;
 }

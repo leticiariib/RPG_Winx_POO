@@ -80,6 +80,8 @@ class Personagem {
         float getDefesa() const { return defesa; }
         int getVelocidade() const { return velocidade; }
         int getNivel() const { return nivel; }
+        int getVidaMaxima() const { return vidaMaxima; }
+        float getMagiaMaxima() const { return magiaMaxima; }
         const vector<Habilidade*>& getHabilidades() const { return habilidades; }
 
         // funções dos efeitos de itens 
