@@ -19,3 +19,12 @@ void Missao::mostrarProgresso() const {
         cout << "- " << obj.descricao << " [" << (obj.concluido ? "✓" : " ") << "]" << endl;
     }
 }
+
+ void Missao::resetar() {
+        cout << "A missão '" << titulo << "' pode ser tentada novamente." << endl;
+        this->estado = EstadoMissao::PENDENTE;
+        // Reseta o progresso dos objetivos também
+        for (auto& obj : objetivos) {
+            obj.concluido = false;
+        }
+}

@@ -205,3 +205,9 @@ float Personagem::getFatorReducaoCustoMagia() const {
     return fator;
 }
 
+void Personagem::recuperarTudo() {
+    this->vida = this->vidaMaxima;
+    this->magia = this->magiaMaxima;
+    cout << getNome() << " teve sua energia totalmente restaurada!" << endl;
+}
+

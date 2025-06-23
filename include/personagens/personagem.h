@@ -68,6 +68,7 @@ class Personagem {
 
         void ganharXP(int xpGanho);
         void recuperarVida(float quantidade); 
+        void recuperarTudo();
          
         void aplicarEfeito(EfeitoContinuo& efeito);
         void atualizarTurno();

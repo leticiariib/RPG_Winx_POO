@@ -40,6 +40,7 @@ public:
     virtual void iniciar();
     virtual Recompensa completar(Personagem& jogador);
     void mostrarProgresso() const;
+    void resetar(); 
 
     int getID() const { return id; }
     string getTitulo() const { return titulo; }
