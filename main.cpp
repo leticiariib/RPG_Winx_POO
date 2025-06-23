@@ -79,7 +79,6 @@ void mostrarMenuHabilidades(Personagem& p) {
 int main() {
     cout << "==== INICIANDO SIMULACAO DE BATALHA ====\n";
 
-    // Personagens jogáveis
     Bloom bloom;
     Musa musa;
     Flora flora;
@@ -87,15 +86,14 @@ int main() {
     Stella stella;
     Tecna tecna;
 
-    // Subir nível para testar desbloqueios
-    bloom.ganharXP(1000);   // Sobe para lvl 5
-    musa.ganharXP(700);     // Sobe para lvl 4
-    flora.ganharXP(1000);   // Sobe para lvl 5
-    aisha.ganharXP(800);    // Sobe para lvl 4
-    stella.ganharXP(800);   // Sobe para lvl 4
-    tecna.ganharXP(1000);   // Sobe para lvl 5
 
-    // Inimigos
+    bloom.ganharXP(1000);  
+    musa.ganharXP(700);    
+    flora.ganharXP(1000);  
+    aisha.ganharXP(800);   
+    stella.ganharXP(800);  
+    tecna.ganharXP(1000);   
+
     Darcy darcy;
     Icy icy;
     Stormy stormy;
@@ -106,19 +104,19 @@ int main() {
 
     cout << "\n==== SIMULANDO COMBATE ====\n";
 
-    // Exemplo de combate: Bloom vs Darcy
+    // teste bloom x darcy
     bloom.mostarStatus();
     darcy.mostarStatus();
 
     mostrarMenuHabilidades(bloom);
-    bloom.usarHabilidade(0, darcy); // Usar primeira habilidade de Bloom
+    bloom.usarHabilidade(0, darcy); 
     darcy.prepararParaNovoTurno();
 
     mostrarMenuHabilidades(bloom);
-    bloom.usarHabilidade(1, darcy); // Segunda habilidade
+    bloom.usarHabilidade(1, darcy); 
     darcy.prepararParaNovoTurno();
 
-    bloom.usarHabilidade(2, darcy); // Ultimate se desbloqueada
+    bloom.usarHabilidade(2, darcy); 
     darcy.prepararParaNovoTurno();
 
     cout << "\n==== STATUS FINAL ====\n";
