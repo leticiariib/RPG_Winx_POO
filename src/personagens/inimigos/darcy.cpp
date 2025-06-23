@@ -1,7 +1,7 @@
-#include "darcy.h"
-#include "rajadaSombria.h" // Habilidade existente
-#include "ondaDeHipnose.h"
-#include "vazioAbsoluto.h"
+#include "personagens/inimigos/darcy.h"
+#include "habilidades/danoContinuo/rajadaSombria.h" // Habilidade existente
+#include "habilidades/nivelAlto/ondaDeHipnose.h"
+#include "habilidades/nivelAlto/vazioAbsoluto.h"
 
 Darcy::Darcy()
     // cefe hipnotica, caracteristicas: Magia e Velocidade altas, Ataque bom, Defesa mediana.

@@ -1,4 +1,4 @@
-#include "fortificar.h"
+#include "habilidades/nivelAlto/fortificar.h"
 #include <iostream>
 
 Fortificar::Fortificar()

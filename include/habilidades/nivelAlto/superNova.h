@@ -1,7 +1,7 @@
 #ifndef SUPER_NOVA_H
 #define SUPER_NOVA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class Supernova : public Habilidade {
 public:

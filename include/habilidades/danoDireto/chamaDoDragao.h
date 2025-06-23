@@ -1,7 +1,7 @@
 #ifndef CHAMA_DO_DRAGAO_H
 #define CHAMA_DO_DRAGAO_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class ChamaDoDragao : public Habilidade {
 public:

@@ -1,7 +1,7 @@
 #ifndef CHEFE_H
 #define CHEFE_H
 
-#include "inimigo.h"
+#include "personagens/inimigo.h"
 
 //tipo especial de inimigo : + forte
 class Chefe : public Inimigo {

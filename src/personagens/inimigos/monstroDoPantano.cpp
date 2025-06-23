@@ -1,6 +1,6 @@
-#include "monstroDoPantano.h"
-#include "pancadaSombria.h"
-#include "rajadaSombria.h" 
+#include "personagens/inimigos/monstroDoPantano.h"
+#include "habilidades/danoDireto/pancadaSombria.h"
+#include "habilidades/danoContinuo/rajadaSombria.h" 
 MonstroDoPantano::MonstroDoPantano()
     //inimigo p/ inicio do jogo
     : Inimigo("Monstro do Pântano", 150, 40, 40, 35, 40) {

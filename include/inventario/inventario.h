@@ -4,7 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "item.h" 
+#include "inventario/item.h" 
 
 using namespace std;
 

@@ -1,6 +1,6 @@
-#include "icy.h"
-#include "estilhacoDeGelo.h" 
-#include "nevascaCongelante.h" 
+#include "personagens/inimigos/icy.h"
+#include "habilidades/danoDireto/estilhacoDeGelo.h" 
+#include "habilidades/danoContinuo/nevascaCongelante.h" 
 
 Icy::Icy()
     // chefona: vida alta, ataque mágico muito alto, boa defesa

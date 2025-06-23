@@ -1,7 +1,7 @@
 #ifndef ONDADEHIPNOSE_H
 #define ONDADEHIPNOSE_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class OndaDeHipnose : public Habilidade {
 public:

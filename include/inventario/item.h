@@ -2,7 +2,7 @@
 #define ITEM_H
 
 #include <string>
-#include "personagem.h"
+#include "personagens/personagem.h"
 using namespace std;
 
 class Item {

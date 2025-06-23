@@ -1,7 +1,7 @@
 #ifndef BRACELETE_CONCENTRACAO_H
 #define BRACELETE_CONCENTRACAO_H
 
-#include "armadura.h"
+#include "inventario/armaduras/armadura.h"
 
 class BraceleteConcentracao : public Armadura {
 public:

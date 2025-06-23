@@ -1,4 +1,4 @@
-#include "controladorDeMissoes.h"
+#include "missoes/controladorDeMissoes.h"
 #include <iostream>
 
 ControladorDeMissoes::~ControladorDeMissoes() {

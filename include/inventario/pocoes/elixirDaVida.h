@@ -1,7 +1,7 @@
 #ifndef ELIXIR_DA_VIDA_H
 #define ELIXIR_DA_VIDA_H
 
-#include "pocoes.h"
+#include "inventario/pocoes/pocoes.h"
 
 class ElixirDaVida : public Pocao {
 public:

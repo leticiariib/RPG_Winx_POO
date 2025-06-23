@@ -1,7 +1,7 @@
 #ifndef PO_DE_FADA_H
 #define PO_DE_FADA_H
 
-#include "pocoes.h"
+#include "inventario/pocoes/pocoes.h"
 
 class PoDeFada : public Pocao {
 public:

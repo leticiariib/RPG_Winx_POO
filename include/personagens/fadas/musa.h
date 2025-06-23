@@ -1,7 +1,7 @@
 #ifndef MUSA_H
 #define MUSA_H
 
-#include "personagem.h"
+#include "personagens/personagem.h"
 
 class Musa : public Personagem {
 private:

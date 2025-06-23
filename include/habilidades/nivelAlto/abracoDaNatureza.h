@@ -1,7 +1,7 @@
 #ifndef ABRACO_DANATUREZA_H
 #define ABRACO_DANATUREZA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class AbracoDaNatureza : public Habilidade {
 public:

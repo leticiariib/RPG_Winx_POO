@@ -1,7 +1,7 @@
 #ifndef BLOOM_H
 #define BLOOM_H
 
-#include "personagem.h"
+#include "personagens/personagem.h"
 
 class Bloom : public Personagem {
 private:

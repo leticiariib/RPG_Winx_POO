@@ -1,7 +1,7 @@
 #ifndef NEVASCACONGELANTE_H
 #define NEVASCACONGELANTE_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class NevascaCongelante : public Habilidade {
 public:

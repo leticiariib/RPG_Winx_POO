@@ -1,7 +1,7 @@
 #ifndef REDEMOINHO_H
 #define REDEMOINHO_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class Redemoinho : public Habilidade {
 public:

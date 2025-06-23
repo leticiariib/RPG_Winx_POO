@@ -1,7 +1,7 @@
-#include "stormy.h"
-#include "relampago.h"
-#include "furacaoDestruidor.h"
-#include "redemoinho.h" // Habilidade existente
+#include "personagens/inimigos/stormy.h"
+#include "habilidades/danoDireto/relampago.h"
+#include "habilidades/nivelAlto/furacaoDestruidor.h"
+#include "habilidades/danoContinuo/redemoinho.h" // Habilidade existente
 
 Stormy::Stormy()
     // caracteristicas de chefe 3: Ataque Mágico altíssimo, mas Defesa e Vida mais baixas.

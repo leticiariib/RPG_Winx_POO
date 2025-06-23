@@ -1,8 +1,8 @@
 #ifndef POCAO_H
 #define POCAO_H
 
-#include "Item.h"
-#include "Personagem.h"
+#include "inventario/item.h"
+#include "personagens/personagem.h"
 #include <iostream>
 using namespace std;
 

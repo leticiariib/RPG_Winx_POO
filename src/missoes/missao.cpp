@@ -1,4 +1,4 @@
-#include "missao.h"
+#include "missoes/missao.h"
 
 void Missao::iniciar() {
     cout << "\nIniciando missao: " << titulo << endl;

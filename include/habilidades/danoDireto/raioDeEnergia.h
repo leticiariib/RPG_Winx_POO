@@ -1,7 +1,7 @@
 #ifndef RAIO_DE_ENERGIA_H
 #define RAIO_DE_ENERGIA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class RaioDeEnergia : public Habilidade {
 public:

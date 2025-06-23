@@ -1,7 +1,7 @@
 #ifndef SETADASTREVAS_H
 #define SETADASTREVAS_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class SetaDasTrevas : public Habilidade {
 public:

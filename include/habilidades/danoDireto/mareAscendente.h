@@ -1,7 +1,7 @@
 #ifndef MARE_ASCENDENTE_H
 #define MARE_ASCENDENTE_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class MareAscendente : public Habilidade {
 public:

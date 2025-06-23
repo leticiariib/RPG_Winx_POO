@@ -1,5 +1,5 @@
 #include "batalha.h"
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 #include <iostream>
 #include <limits> // p/ limpar o buffer de entrada
 #include <cstdlib> 

@@ -3,7 +3,7 @@
 
 #include <vector>
 #include <map>
-#include "missao.h"
+#include "missoes/missao.h"
 
 class ControladorDeMissoes {
 private:

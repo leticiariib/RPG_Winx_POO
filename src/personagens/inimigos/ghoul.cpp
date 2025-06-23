@@ -1,5 +1,5 @@
-#include "ghoul.h"
-#include "pancadaSombria.h" // Habilidade do Ghoul
+#include "personagens/inimigos/ghoul.h"
+#include "habilidades/danoDireto/pancadaSombria.h" // Habilidade do Ghoul
 
 Ghoul::Ghoul()
     // status baixo no geral, inimigo para o início do jogo.

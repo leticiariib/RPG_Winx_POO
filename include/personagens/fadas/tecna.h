@@ -1,7 +1,7 @@
 #ifndef TECNA_H
 #define TECNA_H
 
-#include "personagem.h"
+#include "personagens/personagem.h"
 
 class Tecna : public Personagem {
 private:

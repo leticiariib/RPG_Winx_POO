@@ -1,4 +1,4 @@
-#include "chamasPersistentes.h"
+#include "habilidades/danoContinuo/chamasPersistentes.h"
 #include <iostream>
 
 ChamasPersistentes::ChamasPersistentes()

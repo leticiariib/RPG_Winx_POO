@@ -1,4 +1,4 @@
-#include "esporosVenenosos.h"
+#include "habilidades/danoContinuo/esporosVenenosos.h"
 #include <iostream>
 
 EsporosVenenosos::EsporosVenenosos()

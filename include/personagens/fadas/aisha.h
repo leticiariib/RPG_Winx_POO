@@ -1,7 +1,7 @@
 #ifndef AISHA_H
 #define AISHA_H
 
-#include "personagem.h"
+#include "personagens/personagem.h"
 
 class Aisha : public Personagem {
 private:

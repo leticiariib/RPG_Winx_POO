@@ -1,7 +1,7 @@
 #ifndef RAJADA_SOMBRIA_H
 #define RAJADA_SOMBRIA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class RajadaSombria : public Habilidade {
 public:

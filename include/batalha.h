@@ -1,11 +1,11 @@
 #ifndef BATALHA_H
 #define BATALHA_H
 
-#include "personagem.h"
-#include "inimigo.h"
-#include "inventario.h"
-#include "pocoes.h"
-#include "armadura.h"
+#include "personagens/personagem.h"
+#include "personagens/inimigo.h"
+#include "inventario/inventario.h"
+#include "inventario/pocoes/pocoes.h"
+#include "inventario/armaduras/armadura.h"
 #include <vector>
 #include <algorithm> // ordenar a fila de turnos
 

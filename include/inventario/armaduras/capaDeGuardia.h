@@ -1,7 +1,7 @@
 #ifndef CAPA_DE_GUARDIA_H
 #define CAPA_DE_GUARDIA_H
 
-#include "armadura.h"
+#include "inventario/armaduras/armadura.h"
 
 class CapaDaGuardia : public Armadura {
     public:

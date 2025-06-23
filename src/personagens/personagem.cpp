@@ -1,4 +1,5 @@
-#include "personagem.h"
+#include "personagens/personagem.h"
+#include "habilidades/habilidade.h"
 #include <cmath> 
 
 Personagem::~Personagem() {

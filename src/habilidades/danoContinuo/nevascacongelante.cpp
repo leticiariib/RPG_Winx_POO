@@ -1,4 +1,4 @@
-#include "nevascaCongelante.h"
+#include "habilidades/danoContinuo/nevascaCongelante.h"
 #include <iostream>
 
 NevascaCongelante::NevascaCongelante()

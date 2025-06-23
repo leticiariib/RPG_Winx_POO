@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "personagem.h"
+#include "personagens/personagem.h"
 
 using namespace std;
 
@@ -24,3 +24,4 @@ public:
 };
 
 #endif
+

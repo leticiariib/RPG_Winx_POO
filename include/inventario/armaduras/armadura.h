@@ -1,9 +1,10 @@
 #ifndef ARMADURA_H
 #define ARMADURA_H
 
-#include "Item.h"
-#include "Personagem.h"
+#include "inventario/item.h"
+#include "personagens/personagem.h"
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Armadura : public Item {

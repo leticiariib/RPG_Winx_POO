@@ -1,7 +1,7 @@
 #ifndef FURACAO_DESTRUIDOR_H
 #define FURACAO_DESTRUIDOR_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class FuracaoDestruidor : public Habilidade {
 public:

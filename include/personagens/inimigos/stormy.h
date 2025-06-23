@@ -1,7 +1,7 @@
 #ifndef STORMY_H
 #define STORMY_H
 
-#include "chefe.h"
+#include "personagens/chefe.h"
 
 class Stormy : public Chefe {
 public:

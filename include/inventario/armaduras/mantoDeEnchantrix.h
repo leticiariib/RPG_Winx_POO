@@ -1,7 +1,7 @@
 #ifndef MANTO_DE_ENCHANTRIX
 #define MANTO_DE_ENCHANTRIX
 
-#include "armadura.h"
+#include "inventario/armaduras/armadura.h"
 
 class MantoDeEnchantix : public Armadura {
     public:

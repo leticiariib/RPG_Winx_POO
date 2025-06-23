@@ -1,7 +1,7 @@
 #ifndef DARCY_H
 #define DARCY_H
 
-#include "chefe.h"
+#include "personagens/chefe.h"
 
 class Darcy : public Chefe {
 public:

@@ -1,7 +1,7 @@
 #ifndef STELLA_H
 #define STELLA_H
 
-#include "personagem.h"
+#include "personagens/personagem.h"
 
 class Stella : public Personagem {
 private:

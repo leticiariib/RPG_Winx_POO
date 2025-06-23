@@ -1,7 +1,7 @@
-#include "tecna.h"
-#include "raioDeEnergia.h"
-#include "curtoCircuito.h"
-#include "firewallDigital.h" 
+#include "personagens/fadas/tecna.h"
+#include "habilidades/danoDireto/raioDeEnergia.h"
+#include "habilidades/danoContinuo/curtoCircuito.h"
+#include "habilidades/nivelAlto/firewallDigital.h" 
 
 Tecna::Tecna() : Personagem("Tecna", 105, 90, 55, 70, 68) {
     // Caracteristica: defesa alta e ataques que ignoram defesas

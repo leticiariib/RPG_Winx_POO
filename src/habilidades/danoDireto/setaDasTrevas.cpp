@@ -1,4 +1,4 @@
-#include "setaDasTrevas.h"
+#include "habilidades/danoDireto/setaDasTrevas.h"
 #include <iostream>
 
 SetaDasTrevas::SetaDasTrevas()

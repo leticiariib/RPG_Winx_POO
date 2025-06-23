@@ -1,7 +1,7 @@
 #ifndef MONSTRO_DO_PANTANO_H
 #define MONSTRO_DO_PANTANO_H
 
-#include "inimigo.h"
+#include "personagens/inimigo.h"
 
 //inimigo p/ inicio do jogo
 class MonstroDoPantano : public Inimigo {

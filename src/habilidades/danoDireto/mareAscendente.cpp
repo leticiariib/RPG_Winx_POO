@@ -1,5 +1,5 @@
 #include <iostream>
-#include "mareAscendente.h"
+#include "habilidades/danoDireto/mareAscendente.h"
 
 MareAscendente::MareAscendente()
     : Habilidade("Mare Ascendente", 35, 15) {}

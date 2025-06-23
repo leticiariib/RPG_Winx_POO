@@ -1,7 +1,7 @@
 #ifndef FLORA_H
 #define FLORA_H
 
-#include "personagem.h"
+#include "personagens/personagem.h"
 
 class Flora : public Personagem {
 private:

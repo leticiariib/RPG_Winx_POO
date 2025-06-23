@@ -1,7 +1,7 @@
 #ifndef ONDA_SONORA_H
 #define ONDA_SONORA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class OndaSonora : public Habilidade {
 public:

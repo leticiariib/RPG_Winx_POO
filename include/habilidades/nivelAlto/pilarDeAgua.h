@@ -1,7 +1,7 @@
 #ifndef PILAR_DE_AGUA_H
 #define PILAR_DE_AGUA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class PilarDeAgua : public Habilidade {
 public:

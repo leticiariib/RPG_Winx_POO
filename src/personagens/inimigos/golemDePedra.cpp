@@ -1,6 +1,6 @@
-#include "golemDePedra.h"
-#include "pancadaRochosa.h"
-#include "fortificar.h"
+#include "personagens/inimigos/golemDePedra.h"
+#include "habilidades/danoDireto/pancadaRochosa.h"
+#include "habilidades/nivelAlto/fortificar.h"
 
 GolemDePedra::GolemDePedra()
     // caracteristicas: Vida e Defesa massivas, Ataque e Velocidade muito baixos. Acho que seria bom p/ inicio/meio jogo

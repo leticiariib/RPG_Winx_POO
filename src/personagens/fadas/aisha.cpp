@@ -1,7 +1,7 @@
-#include "aisha.h"
-#include "mareAscendente.h"
-#include "jatoDeAgua.h"       
-#include "pilarDeAgua.h"      // Habilidade de Nível Alto
+#include "personagens/fadas/aisha.h"
+#include "habilidades/danoDireto/mareAscendente.h"
+#include "habilidades/danoDireto/jatoDeAgua.h"       
+#include "habilidades/nivelAlto/pilarDeAgua.h"      // Habilidade de Nível Alto
 
 Aisha::Aisha() : Personagem("Aisha", 110, 95, 40, 68, 75) {
     // Caracteristicas: Bons status ofensivos e velocidade

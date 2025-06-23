@@ -1,7 +1,7 @@
-#include "flora.h"
-#include "jatoDeAgua.h"
-#include "esporosVenenosos.h"
-#include "abracoDaNatureza.h" // Habilidade de Nível Alto
+#include "personagens/fadas/flora.h"
+#include "habilidades/danoDireto/jatoDeAgua.h"
+#include "habilidades/danoContinuo/esporosVenenosos.h"
+#include "habilidades/nivelAlto/abracoDaNatureza.h" // Habilidade de Nível Alto
 
 Flora::Flora() : Personagem("Flora", 120, 100, 50, 60, 60) {
     // Caract. : vida e Defesa altas, ideal para batalhas longas

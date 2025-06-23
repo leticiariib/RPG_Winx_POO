@@ -1,4 +1,4 @@
-#include "ondaSonora.h"
+#include "habilidades/danoDireto/ondaSonora.h"
 #include <iostream>
 
 OndaSonora::OndaSonora()

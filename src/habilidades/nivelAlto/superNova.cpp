@@ -1,4 +1,4 @@
-#include "supernova.h"
+#include "habilidades/nivelAlto/supernova.h"
 #include <iostream>
 
 Supernova::Supernova()

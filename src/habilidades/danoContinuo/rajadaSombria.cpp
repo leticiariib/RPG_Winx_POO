@@ -1,4 +1,4 @@
-#include "rajadaSombria.h"
+#include "habilidades/danoContinuo/rajadaSombria.h"
 #include <iostream>
 
 RajadaSombria::RajadaSombria()

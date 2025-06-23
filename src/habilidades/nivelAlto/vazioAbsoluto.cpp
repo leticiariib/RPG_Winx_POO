@@ -1,4 +1,4 @@
-#include "vazioAbsoluto.h"
+#include "habilidades/nivelAlto/vazioAbsoluto.h"
 #include <iostream>
 
 VazioAbsoluto::VazioAbsoluto()

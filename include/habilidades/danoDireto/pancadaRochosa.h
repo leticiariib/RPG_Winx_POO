@@ -1,7 +1,7 @@
 #ifndef PANCADAROCHOSA_H
 #define PANCADAROCHOSA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class PancadaRochosa : public Habilidade {
 public:

@@ -1,7 +1,7 @@
 #ifndef VAZIOABSOLUTO_H
 #define VAZIOABSOLUTO_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class VazioAbsoluto : public Habilidade {
 public:

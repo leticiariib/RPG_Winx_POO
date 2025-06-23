@@ -1,7 +1,7 @@
 #ifndef PANCADASOMBRIA_H
 #define PANCADASOMBRIA_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class PancadaSombria : public Habilidade {
 public:

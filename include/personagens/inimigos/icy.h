@@ -1,7 +1,7 @@
 #ifndef ICY_H
 #define ICY_H
 
-#include "chefe.h"
+#include "personagens/chefe.h"
 
 class Icy : public Chefe {
 public:

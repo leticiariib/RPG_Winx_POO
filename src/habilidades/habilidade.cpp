@@ -1,4 +1,4 @@
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 Habilidade::Habilidade(string n, float d, float cm)
     : nome{n}, dano_base{d}, custo_magia{cm} {}

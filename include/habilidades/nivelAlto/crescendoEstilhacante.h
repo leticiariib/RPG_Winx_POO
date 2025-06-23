@@ -1,7 +1,7 @@
 #ifndef CRESCENDO_ESTILHACANTE_H
 #define CRESCENDO_ESTILHACANTE_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class CrescendoEstilhacante : public Habilidade {
 public:

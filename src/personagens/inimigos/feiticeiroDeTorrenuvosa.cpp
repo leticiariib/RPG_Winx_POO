@@ -1,6 +1,6 @@
-#include "feiticeiroDeTorrenuvosa.h"
-#include "rajadaSombria.h" 
-#include "setaDasTrevas.h"
+#include "personagens/inimigos/feiticeiroDeTorrenuvosa.h"
+#include "habilidades/danoContinuo/rajadaSombria.h" 
+#include "habilidades/danoDireto/setaDasTrevas.h"
 
 //inimigo medio 
 FeiticeiroDeTorrenuvosa::FeiticeiroDeTorrenuvosa()

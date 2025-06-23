@@ -1,7 +1,7 @@
-#include "musa.h"
-#include "ondaSonora.h"
-#include "redemoinho.h"
-#include "crescendoEstilhacante.h" 
+#include "personagens/fadas/musa.h"
+#include "habilidades/danoDireto/ondaSonora.h"
+#include "habilidades/danoContinuo/redemoinho.h"
+#include "habilidades/nivelAlto/crescendoEstilhacante.h" 
 Musa::Musa() : Personagem("Musa", 95, 105, 30, 75, 85) {
     // caract.: A mais rápida, ataca primeiro mas é frágil.
 

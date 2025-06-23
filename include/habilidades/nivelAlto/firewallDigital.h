@@ -1,7 +1,7 @@
 #ifndef FIREWALLDIGITAL_H
 #define FIREWALLDIGITAL_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class FirewallDigital : public Habilidade {
 public:

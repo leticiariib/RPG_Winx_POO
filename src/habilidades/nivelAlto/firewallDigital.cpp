@@ -1,4 +1,4 @@
-#include "firewallDigital.h"
+#include "habilidades/nivelAlto/firewallDigital.h"
 #include <iostream>
 
 FirewallDigital::FirewallDigital()

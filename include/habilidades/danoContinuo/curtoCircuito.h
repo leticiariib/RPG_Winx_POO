@@ -1,7 +1,7 @@
 #ifndef CURTO_CIRCUITO_H
 #define CURTO_CIRCUITO_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class CurtoCircuito : public Habilidade {
 public:

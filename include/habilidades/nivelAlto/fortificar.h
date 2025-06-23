@@ -1,7 +1,7 @@
 #ifndef FORTIFICAR_H
 #define FORTIFICAR_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class Fortificar : public Habilidade {
 public:

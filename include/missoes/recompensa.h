@@ -2,7 +2,7 @@
 #define RECOMPENSA_H
 
 #include <vector>
-#include "item.h" 
+#include "inventario/item.h" 
 
 using namespace std; 
 

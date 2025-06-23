@@ -1,4 +1,4 @@
-#include "ondaDeHipnose.h"
+#include "habilidades/nivelAlto/ondaDeHipnose.h"
 #include <iostream>
 
 OndaDeHipnose::OndaDeHipnose()

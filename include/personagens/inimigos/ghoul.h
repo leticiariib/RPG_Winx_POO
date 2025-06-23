@@ -1,7 +1,7 @@
 #ifndef GHOUL_H
 #define GHOUL_H
 
-#include "inimigo.h"
+#include "personagens/inimigo.h"
 
 //inimigo p/ inicio do jogo
 

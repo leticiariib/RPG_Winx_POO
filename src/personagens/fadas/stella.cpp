@@ -1,7 +1,7 @@
-#include "stella.h"
-#include "rajadaSombria.h"
-#include "raioDeEnergia.h"
-#include "supernova.h" // Habilidade de Nível Alto
+#include "personagens/fadas/stella.h"
+#include "habilidades/danoContinuo/rajadaSombria.h"
+#include "habilidades/danoDireto/raioDeEnergia.h"
+#include "habilidades/nivelAlto/superNova.h" // Habilidade de Nível Alto
 
 Stella::Stella() : Personagem("Stella", 100, 100, 45, 65, 65) {
     // Caracteristica: status bem distribuídos, sem pontos fracos.

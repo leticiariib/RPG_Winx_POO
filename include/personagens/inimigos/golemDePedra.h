@@ -1,7 +1,7 @@
 #ifndef GOLEMDEPEDRA_H
 #define GOLEMDEPEDRA_H
 
-#include "inimigo.h"
+#include "personagens/inimigo.h"
 
 class GolemDePedra : public Inimigo {
 public:
