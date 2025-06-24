@@ -98,6 +98,7 @@ public:
     float getFatorReducaoCustoMagia() const;
     void usarHabilidade(int indiceHabilidade, Personagem& alvo);
     void adicionarBuff(const BuffTemporario& buff);
+    void ajustarVidaMaxima(float multiplicador);
 };
 
 #endif

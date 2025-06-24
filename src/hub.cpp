@@ -36,6 +36,7 @@
 #include "habilidades/danoDireto/relampago.h"
 #include "habilidades/danoDireto/setaDasTrevas.h"
 #include "habilidades/danoDireto/sombraDoMedo.h"
+#include "habilidades/danoDireto/clavaEsmagadora.h"
 
 #include "missoes/controladorDeMissoes.h"
 #include "missoes/missao.h"
@@ -44,6 +45,9 @@
 #include "missoes/recompensa.h"
 #include "missoes/sombrasEmAlfea.h"
 #include "missoes/sussurrosNaBibliotecaSombria.h"
+#include "missoes/coracaoDeMagix.h"
+#include "missoes/oLamentoDoOgro.h"
+#include "missoes/tempestadeEmZenith.h"
 
 #include "habilidades/nivelAlto/abracoDaNatureza.h"
 #include "habilidades/nivelAlto/crescendoEstilhacante.h"
@@ -72,6 +76,8 @@
 #include "personagens/inimigos/feiticeiroDeTorrenuvosa.h"
 #include "personagens/inimigos/monstroDoPantano.h"
 #include "personagens/inimigos/monstroDoPesadelo.h"
+#include "personagens/inimigos/sentinelaEletrica.h"
+#include "personagens/inimigos/knut.h"
 
 using namespace std;
 
@@ -99,6 +105,9 @@ void iniciarHubDoJogo() {
     diario.adicionarMissao(new Missao_EcosDaCorrupcao());
     diario.adicionarMissao(new Missao_SussurrosNaBiblioteca());
     diario.adicionarMissao(new Missao_GiganteEnfurecido());
+    diario.adicionarMissao(new Missao_oLamentoDoOgro());
+    diario.adicionarMissao(new Missao_TempestadeEmZenith());
+    diario.adicionarMissao(new Missao_CoracaoDeMagix());
 
     // Criamos a "lista" de fadas disponíveis
     Bloom bloom;
@@ -205,8 +214,13 @@ void iniciarHubDoJogo() {
                         static_cast<Missao_SussurrosNaBiblioteca*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
                     } else if (idMissao == 4) {
                         static_cast<Missao_GiganteEnfurecido*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
+                    } else if (idMissao == 5) {
+                        static_cast<Missao_oLamentoDoOgro*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
+                    } else if (idMissao == 6) {
+                        static_cast<Missao_TempestadeEmZenith*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
+                    } else if (idMissao == 7) {
+                        static_cast<Missao_CoracaoDeMagix*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
                     }
-                    // TENHO QUE ADD AS OUTRAS MISSOES AQUI
 
                     // Lógica Pós-Missão: Recupera a fada para que ela esteja pronta para a próxima
                     if (!fadaParaMissao->estaVivo()) {

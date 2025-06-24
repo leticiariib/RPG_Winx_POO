@@ -230,3 +230,10 @@ void Personagem::recuperarTudo() {
     cout << getNome() << " teve sua energia totalmente restaurada!" << endl;
 }
 
+void Personagem::ajustarVidaMaxima(float multiplicador) {
+        this->vidaMaxima = static_cast<int>(this->vidaMaxima * multiplicador);
+        if (this->vida > this->vidaMaxima) {
+            this->vida = this->vidaMaxima;
+        }
+}
+

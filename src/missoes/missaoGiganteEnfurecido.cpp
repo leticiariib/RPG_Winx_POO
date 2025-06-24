@@ -1,7 +1,7 @@
 #include "missoes\missaoGiganteEnfurecido.h"
 #include "batalha.h"
 #include "personagens\inimigos\golemDePedra.h"
-#include "inventario\armaduras\capaDeGuardia.h" // A recompensa da missão
+#include "inventario\armaduras\capaDeGuardia.h" 
 #include <vector>
 #include <iostream>
 
