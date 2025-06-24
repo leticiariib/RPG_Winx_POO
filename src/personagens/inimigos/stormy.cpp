@@ -5,7 +5,7 @@
 
 Stormy::Stormy()
     // caracteristicas de chefe 3: Ataque Mágico altíssimo, mas Defesa e Vida mais baixas.
-    : Chefe("Stormy, Bruxa das Tempestades", 360, 200, 40, 95, 78) {
+    : Chefe("Stormy, Bruxa das Tempestades", 230, 130, 40, 95, 78) {
     
     this->nivel = 10;
 

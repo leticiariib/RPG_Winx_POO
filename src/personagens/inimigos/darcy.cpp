@@ -6,7 +6,7 @@
 Darcy::Darcy()
     // cefe hipnotica, caracteristicas: Magia e Velocidade altas, Ataque bom, Defesa mediana.
 
-    : Chefe("Darcy, Bruxa das Ilusões", 380, 220, 50, 80, 80) {
+    : Chefe("Darcy, Bruxa das Ilusões", 230, 120, 50, 80, 80) {
     
     this->nivel = 10;
 

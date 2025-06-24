@@ -4,7 +4,7 @@
 SentinelaEletrica::SentinelaEletrica()
     // caracteristicas: status equilibrados, um soldado robótico padrão.
 
-    : Inimigo("Sentinela Elétrica", 150, 60, 45, 60, 60) {
+    : Inimigo("Sentinela Elétrica", 95, 60, 45, 50, 60) {
     
     this->nivel = 9;
     habilidades.push_back(new RaioDeEnergia());

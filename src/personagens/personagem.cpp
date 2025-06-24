@@ -66,10 +66,10 @@ void Personagem::subirDeNivel() {
     xpParaProximoNivel = static_cast<int>(xpParaProximoNivel * 1.5);
 
     //valores de atributos aumentados por subir de nivel
-    int crescimentoVida = 15;
-    int crescimentoMagia = 10;
-    float crescimentoAtaque = 5;
-    float crescimentoDefesa = 3;
+    int crescimentoVida = 25;
+    int crescimentoMagia = 15;
+    float crescimentoAtaque = 8;
+    float crescimentoDefesa = 5;
 
     vidaMaxima += crescimentoVida;
     magiaMaxima += crescimentoMagia;

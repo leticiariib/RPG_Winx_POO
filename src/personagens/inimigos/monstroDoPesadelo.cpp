@@ -4,7 +4,7 @@
 
 MonstroDoPesadelo::MonstroDoPesadelo()
     // caracteristicas: Vida e ataque medianos, mas rápido para aplicar seus efeitos.
-    : Inimigo("Monstro do Pesadelo", 140, 80, 35, 55, 65) {
+    : Inimigo("Monstro do Pesadelo", 95, 80, 35, 55, 65) {
     
     this->nivel = 8;
     habilidades.push_back(new RajadaSombria());

@@ -2,7 +2,7 @@
 #include <iostream>
 
 SetaDasTrevas::SetaDasTrevas()
-    : Habilidade("Seta das Trevas", 45, 18) {} // Dano considerável, custo médio
+    : Habilidade("Seta das Trevas", 30, 18) {} // Dano considerável, custo médio
 
 void SetaDasTrevas::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.6f;

@@ -3,7 +3,7 @@
 
 Knut::Knut()
     // caracteristicas de Mini-Chefe: Vida e Ataque altos, Defesa decente, mas lento.
-    : Inimigo("Knut, o Ogro", 320, 20, 50, 65, 40) {
+    : Inimigo("Knut, o Ogro", 140, 20, 50, 55, 40) {
 
     this->nivel = 5;
     habilidades.push_back(new ClavaEsmagadora());

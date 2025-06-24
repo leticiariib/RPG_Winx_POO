@@ -4,7 +4,7 @@
 
 //inimigo medio 
 FeiticeiroDeTorrenuvosa::FeiticeiroDeTorrenuvosa()
-    : Inimigo("Feiticeiro de Torrenuvosa", 110, 100, 25, 70, 60) {
+    : Inimigo("Feiticeiro de Torrenuvosa", 70, 50, 25, 50, 60) {
 
     this->nivel = 7;
     habilidades.push_back(new SetaDasTrevas());

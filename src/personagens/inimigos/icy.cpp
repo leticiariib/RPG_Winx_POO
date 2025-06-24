@@ -5,7 +5,7 @@
 Icy::Icy()
     // chefona: vida alta, ataque mágico muito alto, boa defesa
 
-    : Chefe("Icy, Bruxa do Gelo", 400, 200, 60, 85, 75) {
+    : Chefe("Icy, Bruxa do Gelo", 210, 100, 45, 70, 75) {
     
     this->nivel = 10; 
 

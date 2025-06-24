@@ -2,7 +2,7 @@
 #include <iostream>
 
 ClavaEsmagadora::ClavaEsmagadora()
-    : Habilidade("Clava Esmagadora", 40, 0) {} 
+    : Habilidade("Clava Esmagadora", 30, 0) {} 
 
 void ClavaEsmagadora::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.5f;
