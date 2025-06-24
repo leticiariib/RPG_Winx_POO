@@ -81,4 +81,6 @@ void Missao_SombrasEmAlfea::executar(Personagem& fadaEscolhida, Inventario<Pocao
     // esvazia o vetor de recompensas da missão para não adicioná-los de novo por acidente
     // ponteiros agora são gerenciados pelos inventários
     this->recompensa.itens.clear(); 
+    setEstado(EstadoMissao::COMPLETA);
+
 }

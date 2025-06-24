@@ -3,7 +3,7 @@
 #include "habilidades/danoContinuo/chamasPersistentes.h"
 #include "habilidades/nivelAlto/furiaDoDragao.h" 
 
-Bloom::Bloom() : Personagem("Bloom", 90, 110, 35, 80, 70) {
+Bloom::Bloom() : Personagem("Bloom", 90, 210, 35, 80, 70) {
     // Caracteristicas: Maior Ataque Mágico, mas baixa defesa e vida
 
     // Habilidades iniciais

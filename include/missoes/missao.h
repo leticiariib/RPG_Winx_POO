@@ -30,13 +30,18 @@ protected:
     Recompensa recompensa;
     bool ehPrincipal;
 
+    // marcar uma missao como concluisa
+    void setEstado(EstadoMissao novoEstado) {
+        estado = novoEstado;
+    }
+
 public:
     Missao(int id, string titulo, string desc, Recompensa recomp, bool principal)
         : id(id), titulo(titulo), descricao(desc), estado(EstadoMissao::PENDENTE), recompensa(recomp), ehPrincipal(principal) {}
 
     virtual ~Missao() = default;
 
-    // so as declaraçoes 
+    // Declarações
     virtual void iniciar();
     virtual Recompensa completar(Personagem& jogador);
     void mostrarProgresso() const;

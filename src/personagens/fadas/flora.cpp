@@ -3,7 +3,7 @@
 #include "habilidades/danoContinuo/esporosVenenosos.h"
 #include "habilidades/nivelAlto/abracoDaNatureza.h" // Habilidade de Nível Alto
 
-Flora::Flora() : Personagem("Flora", 120, 100, 50, 60, 60) {
+Flora::Flora() : Personagem("Flora", 120, 200, 50, 60, 60) {
     // Caract. : vida e Defesa altas, ideal para batalhas longas
 
     habilidades.push_back(new JatoDeAgua());

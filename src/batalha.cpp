@@ -191,7 +191,26 @@ void Batalha::verificarFimDeBatalha() {
             break;
         }
     }
+
+    if (todosInimigosMortos) {
+        cout << "\n🎉 Todos os inimigos foram derrotados! Você venceu a batalha!" << endl;
+        cout << "Pressione Enter para continuar...";
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cin.get();
+        batalhaTerminou = true;
+        return;
+    }
+
+    if (!jogador.estaVivo()) {
+        cout << "\n💀 Você foi derrotado na batalha..." << endl;
+        cout << "Pressione Enter para continuar...";
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        cin.get();
+        batalhaTerminou = true;
+    }
 }
+
+
 
 Inimigo* Batalha::escolherAlvo() {
     cout << "\nEscolha o alvo (ou 0 para cancelar):" << endl;
