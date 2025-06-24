@@ -35,6 +35,24 @@ bool Batalha::iniciar() {
     return jogador.estaVivo();
 }
 
+void Batalha::mostrarStatusBatalha() const {
+    cout << "\n========== STATUS DA BATALHA ==========\n";
+    
+    cout << "\n--- Jogador ---\n";
+    jogador.mostrarStatusCompleto();
+
+    cout << "\n--- Inimigos ---\n";
+    for (const auto& inimigo : inimigos) {
+        if (inimigo) {
+            cout << inimigo->getNome() << ": " 
+                 << inimigo->getVida() << " / " << inimigo->getVidaMaxima()
+                 << (inimigo->estaVivo() ? " (Vivo)" : " (Derrotado)") << "\n";
+        }
+    }
+
+    cout << "\n========================================\n";
+}
+
 void Batalha::executarTurnoJogador() {
     cout << "\n--- SEU TURNO, " << jogador.getNome() << "! ---" << endl;
 

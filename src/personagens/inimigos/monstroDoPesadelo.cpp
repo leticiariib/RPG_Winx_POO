@@ -1,6 +1,6 @@
-#include "monstroDoPesadelo.h"
-#include "rajadaSombria.h"
-#include "sombraDoMedo.h"
+#include "personagens/inimigos/monstroDoPesadelo.h"
+#include "habilidades/danoContinuo/rajadaSombria.h"
+#include "habilidades/danoDireto/sombraDoMedo.h"
 
 MonstroDoPesadelo::MonstroDoPesadelo()
     // caracteristicas: Vida e ataque medianos, mas rápido para aplicar seus efeitos.

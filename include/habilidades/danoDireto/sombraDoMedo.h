@@ -1,7 +1,7 @@
 #ifndef SOMBRA_DO_MEDO_H
 #define SOMBRA_DO_MEDO_H
 
-#include "habilidade.h"
+#include "habilidades/habilidade.h"
 
 class SombraDoMedo : public Habilidade {
 public:

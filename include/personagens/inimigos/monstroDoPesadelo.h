@@ -1,7 +1,7 @@
 #ifndef MONSTRODOPESADELO_H
 #define MONSTRODOPESADELO_H
 
-#include "inimigo.h"
+#include "personagens/inimigo.h"
 
 class MonstroDoPesadelo : public Inimigo {
 public:

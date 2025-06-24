@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 //#include "habilidades/habilidade.h"
-class Habilidade; // declaracao forward
+class Habilidade;
 
 using namespace std;
 
