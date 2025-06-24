@@ -146,9 +146,28 @@ void Personagem::atualizarTurno() {
     }
 }
 
-void Personagem::mostarStatus() const {
-    cout << "Status de " << nome << " - Vida: " << vida
-         << " - Magia: " << magia << endl;
+void Personagem::mostrarStatusCompleto() const {
+    cout << "\n===== FICHA DE " << nome << " =====" << endl;
+    cout << "Nível: " << nivel << endl;
+    cout << "XP: " << xpAtual << " / " << xpParaProximoNivel << endl;
+    cout << "--------------------------" << endl;
+    cout << "Vida: " << vida << " / " << vidaMaxima << endl;
+    cout << "Magia: " << round(magia) << " / " << round(magiaMaxima) << endl;
+    cout << "--------------------------" << endl;
+    cout << "Ataque Mágico: " << ataque_magico << endl;
+    cout << "Defesa: " << defesa << endl;
+    cout << "Velocidade: " << velocidade << endl;
+    cout << "--------------------------" << endl;
+    cout << "Habilidades Conhecidas:" << endl;
+    
+    if (habilidades.empty()) {
+        cout << "  Nenhuma habilidade conhecida." << endl;
+    } else {
+        for (int i = 0; i < habilidades.size(); ++i) {
+            cout << "  " << i + 1 << ". " << habilidades[i]->getNome() << endl;
+        }
+    }
+    cout << "==========================\n" << endl;
 }
 
 void Personagem::recuperarVidaPercentual(float porcentagem) {

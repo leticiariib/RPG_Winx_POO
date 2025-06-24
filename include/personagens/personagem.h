@@ -64,7 +64,7 @@ class Personagem {
         void prepararParaNovoTurno(); 
         void reduzirVelocidade(int quantidade);
         bool estaVivo() const { return vida > 0; }
-        virtual void mostarStatus() const;
+        void mostrarStatusCompleto() const;
 
         void ganharXP(int xpGanho);
         void recuperarVida(float quantidade); 
@@ -72,6 +72,7 @@ class Personagem {
          
         void aplicarEfeito(EfeitoContinuo& efeito);
         void atualizarTurno();
+
 
         // getters 
         string getNome() const { return nome; }
