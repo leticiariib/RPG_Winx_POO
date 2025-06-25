@@ -1,10 +1,10 @@
 #ifndef CORACAO_DE_MAGIX_H
 #define CORACAO_DE_MAGIX_H
 
-#include "missoes\missao.h"
-#include "inventario\inventario.h"
-#include "inventario\pocoes\pocoes.h"
-#include "inventario\armaduras\armadura.h"
+#include "missoes/missao.h"
+#include "inventario/inventario.h"
+#include "inventario/pocoes/pocoes.h"
+#include "inventario/armaduras/armadura.h"
 
 // A missão final da saga
 class Missao_CoracaoDeMagix : public MissaoPrincipal {

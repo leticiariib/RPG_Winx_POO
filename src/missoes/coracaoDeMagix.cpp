@@ -1,10 +1,10 @@
-#include "missoes\coracaoDeMagix.h"
+#include "missoes/coracaoDeMagix.h"
 #include "batalha.h"
-#include "personagens\inimigos\golemDePedra.h"             
-#include "personagens\inimigos\feiticeiroDeTorrenuvosa.h"
-#include "personagens\inimigos\icy.h"                      
-#include "personagens\inimigos\darcy.h"
-#include "personagens\inimigos\stormy.h"
+#include "personagens/inimigos/golemDePedra.h"             
+#include "personagens/inimigos/feiticeiroDeTorrenuvosa.h"
+#include "personagens/inimigos/icy.h"                      
+#include "personagens/inimigos/darcy.h"
+#include "personagens/inimigos/stormy.h"
 #include <vector>
 #include <iostream>
 #include <limits>
