@@ -3,7 +3,7 @@
 #include <iostream>
 
 EstilhacoDeGelo::EstilhacoDeGelo()
-    : Habilidade("Estilhaço de Gelo", 35, 16) {}
+    : Habilidade("Estilhaço de Gelo", 25, 16) {}
 
 void EstilhacoDeGelo::aplicar(Personagem& atacante, Personagem& alvo) {
     int dano = dano_base + atacante.getAtaque() * 0.3;

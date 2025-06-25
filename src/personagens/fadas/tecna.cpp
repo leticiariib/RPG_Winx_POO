@@ -3,7 +3,7 @@
 #include "habilidades/danoContinuo/curtoCircuito.h"
 #include "habilidades/nivelAlto/firewallDigital.h" 
 
-Tecna::Tecna() : Personagem("Tecna", 105, 190, 55, 70, 68) {
+Tecna::Tecna() : Personagem("Tecna", 130, 190, 55, 70, 68) {
     // Caracteristica: defesa alta e ataques que ignoram defesas
     // Status: Vida, Magia, Defesa, Ataque Mágico, Velocidade
 

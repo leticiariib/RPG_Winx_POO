@@ -3,6 +3,7 @@
 #include "personagens\inimigos\monstroDoPesadelo.h"
 #include "personagens\inimigos\darcy.h"
 #include "inventario\armaduras\braceleteConcentracao.h"
+#include "inventario\pocoes\poDeFada.h"
 #include <vector>
 #include <iostream>
 
@@ -36,6 +37,12 @@ void Missao_SussurrosNaBiblioteca::executar(Personagem& fadaEscolhida, Inventari
 
     objetivos[0].concluido = true;
     std::cout << "\nAo derrotar as criaturas, as ilusões se dissipam, revelando um grande salão onde Darcy está, levitando sobre um livro antigo." << std::endl;
+    
+    std::cout << "\nVOCÊ RECEBEU UMA RECOMPENSA DE ETAPA!" << std::endl;
+    int xpBonus = 200;
+    fadaEscolhida.ganharXP(xpBonus);
+    std::cout << "Você encontrou um " << "Po de Fada" << " no chão!" << std::endl;
+    invP.adicionarItem(new PoDeFada());
     mostrarProgresso();
     
     std::cout << "'Tola! Você não pode parar o poder que encontrei aqui!', ela gargalha." << std::endl;

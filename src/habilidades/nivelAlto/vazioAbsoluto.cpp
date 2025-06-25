@@ -3,7 +3,7 @@
 #include <iostream>
 
 VazioAbsoluto::VazioAbsoluto()
-    : Habilidade("Vazio Absoluto", 70, 50) {} 
+    : Habilidade("Vazio Absoluto", 40, 50) {} 
 
 void VazioAbsoluto::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.6f;

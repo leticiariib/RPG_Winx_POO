@@ -3,7 +3,7 @@
 #include "habilidades/danoDireto/raioDeEnergia.h"
 #include "habilidades/nivelAlto/superNova.h" // Habilidade de Nível Alto
 
-Stella::Stella() : Personagem("Stella", 100, 200, 45, 65, 65) {
+Stella::Stella() : Personagem("Stella", 130, 200, 45, 65, 65) {
     // Caracteristica: status bem distribuídos, sem pontos fracos.
 
     // Habilidades iniciais

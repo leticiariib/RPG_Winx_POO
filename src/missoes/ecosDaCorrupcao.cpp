@@ -3,6 +3,7 @@
 #include "personagens\inimigos\monstroDoPantano.h"
 #include "personagens\inimigos\feiticeiroDeTorrenuvosa.h"
 #include "inventario\pocoes\poDeFada.h"
+#include "inventario\pocoes\elixirDaVida.h"
 #include <vector>
 #include <iostream>
 using namespace std; 
@@ -39,6 +40,12 @@ void Missao_EcosDaCorrupcao::executar(Personagem& fadaEscolhida, Inventario<Poca
 
     objetivos[0].concluido = true;
     cout << "\nCom o monstro derrotado, você percebe que ele era apenas um peão. A energia sombria emana de uma clareira mais adiante." << endl;
+
+    cout << "\nVOCÊ RECEBEU UMA RECOMPENSA DE ETAPA!" << endl;
+    int xpBonus = 100;
+    fadaEscolhida.ganharXP(xpBonus);
+    cout << "Você encontrou um " << "Elixir da Vida" << " no chão!" << endl;
+    invP.adicionarItem(new ElixirDaVida());
     mostrarProgresso();
 
     // PARTE 2: A FONTE 

@@ -3,7 +3,7 @@
 #include <iostream>
 
 NevascaCongelante::NevascaCongelante()
-    : Habilidade("Nevasca Congelante", 15, 20) {}
+    : Habilidade("Nevasca Congelante", 10, 20) {}
 
 void NevascaCongelante::aplicar(Personagem& atacante, Personagem& alvo) {
     int dano_por_turno = dano_base + atacante.getAtaque() * 0.2f;

@@ -3,7 +3,7 @@
 #include <iostream>
 
 Redemoinho::Redemoinho()
-    : Habilidade("Redemoinho", 35, 15) {}
+    : Habilidade("Redemoinho", 10, 15) {}
 
 void Redemoinho::aplicar(Personagem& atacante, Personagem& alvo) {
     int dano = 10 + atacante.getAtaque() * 0.2;

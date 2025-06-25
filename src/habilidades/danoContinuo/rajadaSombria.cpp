@@ -3,7 +3,7 @@
 #include <iostream>
 
 RajadaSombria::RajadaSombria()
-    : Habilidade("Rajada Sombria", 28, 16) {}
+    : Habilidade("Rajada Sombria", 10, 16) {}
 
 void RajadaSombria::aplicar(Personagem& atacante, Personagem& alvo) {
     int dano = 10 + atacante.getAtaque() * 0.2;

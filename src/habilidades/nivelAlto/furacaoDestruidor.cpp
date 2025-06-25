@@ -3,7 +3,7 @@
 #include <iostream>
 
 FuracaoDestruidor::FuracaoDestruidor()
-    : Habilidade("Furacão Destruidor", 75, 48) {}
+    : Habilidade("Furacão Destruidor", 50, 48) {}
 
 void FuracaoDestruidor::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.8f;

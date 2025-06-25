@@ -3,7 +3,7 @@
 #include "habilidades/danoDireto/jatoDeAgua.h"       
 #include "habilidades/nivelAlto/pilarDeAgua.h"      // Habilidade de Nível Alto
 
-Aisha::Aisha() : Personagem("Aisha", 110, 195, 40, 68, 75) {
+Aisha::Aisha() : Personagem("Aisha", 130, 195, 40, 68, 75) {
     // Caracteristicas: Bons status ofensivos e velocidade
 
     habilidades.push_back(new MareAscendente());

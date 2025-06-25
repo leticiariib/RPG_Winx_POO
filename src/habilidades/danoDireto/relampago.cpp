@@ -3,7 +3,7 @@
 #include <iostream>
 
 RelampagoFulgurante::RelampagoFulgurante()
-    : Habilidade("Relâmpago Fulgurante", 50, 20) {}
+    : Habilidade("Relâmpago Fulgurante", 35, 20) {}
 
 void RelampagoFulgurante::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.5f;

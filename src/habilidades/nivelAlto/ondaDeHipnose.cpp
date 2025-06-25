@@ -3,7 +3,7 @@
 #include <iostream>
 
 OndaDeHipnose::OndaDeHipnose()
-    : Habilidade("Onda de Hipnose", 40, 25) {}
+    : Habilidade("Onda de Hipnose", 30, 25) {}
 
 void OndaDeHipnose::aplicar(Personagem& atacante, Personagem& alvo) {
     float dano = dano_base + atacante.getAtaque() * 0.4f;

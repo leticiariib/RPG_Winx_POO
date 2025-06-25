@@ -43,6 +43,12 @@ void Missao_SombrasEmAlfea::executar(Personagem& fadaEscolhida, Inventario<Pocao
 
     objetivos[0].concluido = true;
     cout << "\nCom os ghouls derrotados, você segue o rastro de destruição e magia de gelo até a biblioteca..." << endl;
+    
+    cout << "\nVOCÊ RECEBEU UMA RECOMPENSA DE ETAPA!" << endl;
+    int xpBonus = 100;
+    fadaEscolhida.ganharXP(xpBonus);
+    cout << "Você encontrou um " << "Elixir da Vida" << " no chão!" << endl;
+    invP.adicionarItem(new ElixirDaVida());
     mostrarProgresso();
 
     // PARTE 2

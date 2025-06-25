@@ -98,7 +98,9 @@ void iniciarHubDoJogo() {
 
     Inventario<Pocao*> inventarioPocoes;
     Inventario<Armadura*> inventarioArmaduras;
+
     inventarioPocoes.adicionarItem(new ElixirDaVida());// iteem adicional pro jogador 
+    cout << "Voce ganhou um item de brinde por entrar no jogo!" << endl; 
 
     // Criamos o diário de missões e o populamos com todas as missões do jogo.
     ControladorDeMissoes diario;
