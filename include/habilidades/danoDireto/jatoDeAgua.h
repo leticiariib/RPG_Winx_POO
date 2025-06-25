@@ -2,6 +2,7 @@
 #define JATO_DE_AGUA_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class JatoDeAgua : public Habilidade {
 public:

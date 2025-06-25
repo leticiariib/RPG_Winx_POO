@@ -2,6 +2,7 @@
 #define ONDA_SONORA_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class OndaSonora : public Habilidade {
 public:

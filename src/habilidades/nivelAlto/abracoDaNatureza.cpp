@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/abracoDaNatureza.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 AbracoDaNatureza::AbracoDaNatureza()

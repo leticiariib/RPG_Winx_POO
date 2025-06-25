@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/crescendoEstilhacante.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 CrescendoEstilhacante::CrescendoEstilhacante()

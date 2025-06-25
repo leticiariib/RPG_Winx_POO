@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/furacaoDestruidor.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 FuracaoDestruidor::FuracaoDestruidor()

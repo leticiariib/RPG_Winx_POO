@@ -1,4 +1,5 @@
 #include "habilidades/danoDireto/pancadaSombria.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 // habilidade bem fraca, ideal pros inimigos faceis

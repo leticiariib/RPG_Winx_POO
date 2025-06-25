@@ -1,4 +1,5 @@
 #include "habilidades\danoDireto\clavaEsmagadora.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 ClavaEsmagadora::ClavaEsmagadora()

@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/firewallDigital.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 FirewallDigital::FirewallDigital()

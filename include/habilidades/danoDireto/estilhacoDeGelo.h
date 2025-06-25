@@ -2,6 +2,7 @@
 #define ESTILHACO_DE_GELO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class EstilhacoDeGelo : public Habilidade {
 public:

@@ -1,4 +1,5 @@
-#include "ataqueBasico.h"
+#include "habilidades\ataqueBasico.h"
+#include "personagens\personagem.h"
 #include <iostream>
 
 AtaqueBasico::AtaqueBasico()

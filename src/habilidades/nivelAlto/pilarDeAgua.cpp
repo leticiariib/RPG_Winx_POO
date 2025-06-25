@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/pilarDeAgua.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 PilarDeAgua::PilarDeAgua()

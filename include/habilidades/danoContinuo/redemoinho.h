@@ -2,6 +2,7 @@
 #define REDEMOINHO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class Redemoinho : public Habilidade {
 public:

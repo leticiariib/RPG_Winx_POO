@@ -2,6 +2,7 @@
 #define MARE_ASCENDENTE_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class MareAscendente : public Habilidade {
 public:

@@ -2,6 +2,7 @@
 #define FURACAO_DESTRUIDOR_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class FuracaoDestruidor : public Habilidade {
 public:

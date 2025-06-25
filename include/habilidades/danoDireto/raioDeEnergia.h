@@ -2,6 +2,7 @@
 #define RAIO_DE_ENERGIA_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class RaioDeEnergia : public Habilidade {
 public:

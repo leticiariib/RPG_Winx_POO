@@ -2,6 +2,7 @@
 #define RAJADA_SOMBRIA_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class RajadaSombria : public Habilidade {
 public:

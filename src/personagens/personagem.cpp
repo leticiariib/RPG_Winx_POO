@@ -1,9 +1,18 @@
-#include "personagens/personagem.h"
-#include "habilidades/habilidade.h"
+#include "personagens\personagem.h"
+#include "habilidades\habilidade.h"
+#include "habilidades\ataqueBasico.h"
 #include <cmath> 
 #include <string> 
 
 using namespace std; 
+
+Personagem::Personagem(std::string n, int v, float m, float am, float d, int velo)
+    : nome(n), vida(v), vidaMaxima(v), magia(m), magiaMaxima(m), 
+      ataque_magico(am), defesa(d), defesaBase(d), velocidade(velo),
+      nivel(1), xpAtual(0), xpParaProximoNivel(100), estaDefendendo(false) 
+{
+    habilidades.push_back(new AtaqueBasico());
+}
 
 Personagem::~Personagem() {
     for (Habilidade* hab : habilidades) {

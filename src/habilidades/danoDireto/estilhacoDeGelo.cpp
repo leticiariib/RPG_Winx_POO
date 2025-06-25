@@ -1,4 +1,5 @@
 #include "habilidades/danoDireto/estilhacoDeGelo.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 EstilhacoDeGelo::EstilhacoDeGelo()

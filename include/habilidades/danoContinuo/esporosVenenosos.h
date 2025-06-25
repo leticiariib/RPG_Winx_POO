@@ -2,6 +2,7 @@
 #define ESPOROS_VENENOSO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class EsporosVenenosos : public Habilidade{
     public: 

@@ -2,6 +2,7 @@
 #define SETADASTREVAS_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class SetaDasTrevas : public Habilidade {
 public:

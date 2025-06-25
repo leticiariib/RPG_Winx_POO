@@ -2,6 +2,7 @@
 #define FORTIFICAR_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class Fortificar : public Habilidade {
 public:

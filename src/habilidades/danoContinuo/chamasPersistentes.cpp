@@ -1,4 +1,5 @@
 #include "habilidades/danoContinuo/chamasPersistentes.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 ChamasPersistentes::ChamasPersistentes()

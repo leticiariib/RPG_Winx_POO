@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/vazioAbsoluto.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 VazioAbsoluto::VazioAbsoluto()

@@ -4,8 +4,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "habilidades/ataqueBasico.h"
 class Habilidade;
+class AtaqueBasico; 
 
 using namespace std;
 
@@ -46,21 +46,7 @@ protected:
     virtual void checarDesbloqueioHabilidades() {}
 
 public:
-    Personagem(string nome, int vidaInicial, float magiaInicial, float defesaInicial, float ataqueMagicoInicial, int velocidadeInicial)
-        : nome(nome),
-          vida(vidaInicial),
-          vidaMaxima(vidaInicial),
-          magia(magiaInicial),
-          magiaMaxima(magiaInicial),
-          defesa(defesaInicial),
-          defesaBase(defesaInicial),
-          ataque_magico(ataqueMagicoInicial),
-          velocidade(velocidadeInicial),
-          nivel(1), xpAtual(0), xpParaProximoNivel(100) 
-          {
-            habilidades.push_back(new AtaqueBasico());
-          }
-
+    Personagem(std::string nome, int vidaInicial, float magiaInicial, float defesaInicial, float ataqueMagicoInicial, int velocidadeInicial);
     virtual ~Personagem();
 
     virtual void receberDano(float dano);

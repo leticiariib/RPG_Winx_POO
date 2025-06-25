@@ -1,4 +1,5 @@
 #include "habilidades/danoContinuo/rajadaSombria.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 RajadaSombria::RajadaSombria()

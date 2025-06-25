@@ -2,6 +2,7 @@
 #define CHAMA_DO_DRAGAO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class ChamaDoDragao : public Habilidade {
 public:

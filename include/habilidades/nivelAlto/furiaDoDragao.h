@@ -2,6 +2,7 @@
 #define FURIA_DO_DRAGAO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class FuriaDoDragao : public Habilidade {
 public:

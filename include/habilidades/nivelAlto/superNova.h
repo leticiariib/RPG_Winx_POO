@@ -2,6 +2,7 @@
 #define SUPER_NOVA_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class Supernova : public Habilidade {
 public:

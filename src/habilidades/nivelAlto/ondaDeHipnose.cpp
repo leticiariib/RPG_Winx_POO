@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/ondaDeHipnose.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 OndaDeHipnose::OndaDeHipnose()

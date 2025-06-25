@@ -2,6 +2,7 @@
 #define RELAMPAGOFULGURANTE_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class RelampagoFulgurante : public Habilidade {
 public:

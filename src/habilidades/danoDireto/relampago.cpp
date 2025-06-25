@@ -1,4 +1,5 @@
 #include "habilidades/danoDireto/relampago.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 RelampagoFulgurante::RelampagoFulgurante()

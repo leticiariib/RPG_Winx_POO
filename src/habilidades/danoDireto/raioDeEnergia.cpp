@@ -1,4 +1,5 @@
 #include "habilidades/danoDireto/raioDeEnergia.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 RaioDeEnergia::RaioDeEnergia()

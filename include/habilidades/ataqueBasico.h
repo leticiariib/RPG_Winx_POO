@@ -2,6 +2,7 @@
 #define ATAQUEBASICO_H
 
 #include "habilidades\habilidade.h"
+class Personagem; 
 
 class AtaqueBasico : public Habilidade {
 public:

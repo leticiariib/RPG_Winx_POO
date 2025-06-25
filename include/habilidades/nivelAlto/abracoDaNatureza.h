@@ -2,6 +2,7 @@
 #define ABRACO_DANATUREZA_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class AbracoDaNatureza : public Habilidade {
 public:

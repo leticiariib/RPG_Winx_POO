@@ -2,6 +2,7 @@
 #define CURTO_CIRCUITO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class CurtoCircuito : public Habilidade {
 public:

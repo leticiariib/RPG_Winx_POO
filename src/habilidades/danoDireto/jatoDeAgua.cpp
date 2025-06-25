@@ -1,5 +1,6 @@
 #include <iostream>
 #include "habilidades/danoDireto/jatoDeAgua.h"
+#include "personagens/personagem.h"
 
 JatoDeAgua::JatoDeAgua()
     : Habilidade("Jato de Agua", 35, 15) {}

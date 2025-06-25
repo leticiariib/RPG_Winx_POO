@@ -2,6 +2,7 @@
 #define SOMBRA_DO_MEDO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class SombraDoMedo : public Habilidade {
 public:

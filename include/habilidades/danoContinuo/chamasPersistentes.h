@@ -2,6 +2,7 @@
 #define CHAMAS_PERSISTENTES_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class ChamasPersistentes : public Habilidade {
 public:

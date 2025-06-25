@@ -2,6 +2,7 @@
 #define ONDADEHIPNOSE_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class OndaDeHipnose : public Habilidade {
 public:

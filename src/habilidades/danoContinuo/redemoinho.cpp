@@ -1,4 +1,5 @@
 #include "habilidades/danoContinuo/redemoinho.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 Redemoinho::Redemoinho()

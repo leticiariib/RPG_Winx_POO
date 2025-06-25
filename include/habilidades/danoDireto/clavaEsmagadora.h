@@ -2,6 +2,7 @@
 #define CLAVAESMAGADORA_H
 
 #include "habilidades\habilidade.h"
+class Personagem;
 
 class ClavaEsmagadora : public Habilidade {
 public:

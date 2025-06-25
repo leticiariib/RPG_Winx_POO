@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-#include "personagens/personagem.h"
+class Personagem; 
 
 using namespace std;
 

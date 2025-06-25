@@ -2,6 +2,7 @@
 #define CRESCENDO_ESTILHACANTE_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class CrescendoEstilhacante : public Habilidade {
 public:

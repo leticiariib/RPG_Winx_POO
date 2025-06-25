@@ -1,4 +1,5 @@
 #include "habilidades\danoDireto\sombraDoMedo.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 SombraDoMedo::SombraDoMedo()

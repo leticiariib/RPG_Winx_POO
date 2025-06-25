@@ -2,6 +2,7 @@
 #define PANCADAROCHOSA_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class PancadaRochosa : public Habilidade {
 public:

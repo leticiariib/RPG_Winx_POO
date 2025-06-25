@@ -2,6 +2,7 @@
 #define FIREWALLDIGITAL_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class FirewallDigital : public Habilidade {
 public:

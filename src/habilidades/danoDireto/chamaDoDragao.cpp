@@ -1,5 +1,6 @@
 #include <iostream>
 #include "habilidades/danoDireto/chamaDoDragao.h"
+#include "personagens/personagem.h"
 
 ChamaDoDragao::ChamaDoDragao()
     : Habilidade("Chama do Dragao", 40, 20) {}

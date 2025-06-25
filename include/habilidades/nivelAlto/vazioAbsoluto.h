@@ -2,6 +2,7 @@
 #define VAZIOABSOLUTO_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class VazioAbsoluto : public Habilidade {
 public:

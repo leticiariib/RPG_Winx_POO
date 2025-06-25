@@ -1,4 +1,5 @@
 #include "habilidades/nivelAlto/furiaDoDragao.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 FuriaDoDragao::FuriaDoDragao()

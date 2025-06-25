@@ -1,4 +1,5 @@
 #include "habilidades/danoContinuo/curtoCircuito.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 CurtoCircuito::CurtoCircuito()

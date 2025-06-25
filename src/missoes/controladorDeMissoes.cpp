@@ -1,11 +1,9 @@
 #include "missoes/controladorDeMissoes.h"
 #include <iostream>
 
-using namespace std; 
-
 ControladorDeMissoes::~ControladorDeMissoes() {
-    for (auto const& [id, missao] : missoes) {
-        delete missao;
+    for (auto const& par : missoes) {
+        delete par.second;
     }
     missoes.clear();
 }
@@ -17,36 +15,46 @@ void ControladorDeMissoes::adicionarMissao(Missao* novaMissao) {
 }
 
 void ControladorDeMissoes::mostrarMissoesDisponiveis() const {
-    cout << "\n--- Quadro de Missões Disponíveis ---" << endl;
+    std::cout << "\n--- Quadro de Missões Disponíveis ---" << std::endl;
     bool nenhumaDisponivel = true;
-    for (auto const& [id, missao] : missoes) {
+    
+    for (auto const& par : missoes) {
+        int id = par.first;
+        Missao* missao = par.second;
+
         if (missao->getEstado() == EstadoMissao::PENDENTE) {
-            cout << "[" << id << "] " << missao->getTitulo() << (missao->isPrincipal() ? " (Principal)" : " (Secundária)") << endl;
+            std::cout << "[" << id << "] " << missao->getTitulo() << (missao->isPrincipal() ? " (Principal)" : " (Secundária)") << std::endl;
             nenhumaDisponivel = false;
         }
     }
+
     if (nenhumaDisponivel) {
-        cout << "Nenhuma nova missão disponível no momento." << endl;
+        std::cout << "Nenhuma nova missão disponível no momento." << std::endl;
     }
 }
 
 void ControladorDeMissoes::mostrarMissoesAtivas() const {
-    cout << "\n--- Diário de Missões Ativas ---" << endl;
-     bool nenhumaAtiva = true;
-    for (auto const& [id, missao] : missoes) {
+    std::cout << "\n--- Diário de Missões Ativas ---" << std::endl;
+    bool nenhumaAtiva = true;
+
+    for (auto const& par : missoes) {
+        Missao* missao = par.second;
+
         if (missao->getEstado() == EstadoMissao::ATIVA) {
             missao->mostrarProgresso();
             nenhumaAtiva = false;
         }
     }
-     if (nenhumaAtiva) {
-        cout << "Nenhuma missão ativa no momento." << endl;
+
+    if (nenhumaAtiva) {
+        std::cout << "Nenhuma missão ativa no momento." << std::endl;
     }
 }
 
 Missao* ControladorDeMissoes::getMissao(int id) {
-    if (missoes.count(id)) {
-        return missoes[id];
+    auto it = missoes.find(id);
+    if (it != missoes.end()) {
+        return it->second;
     }
     return nullptr;
 }

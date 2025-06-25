@@ -2,6 +2,7 @@
 #define NEVASCACONGELANTE_H
 
 #include "habilidades/habilidade.h"
+class Personagem;
 
 class NevascaCongelante : public Habilidade {
 public:

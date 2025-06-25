@@ -1,4 +1,5 @@
 #include "habilidades/danoDireto/pancadaRochosa.h"
+#include "personagens/personagem.h"
 #include <iostream>
 
 PancadaRochosa::PancadaRochosa()
