@@ -195,7 +195,11 @@ void iniciarHubDoJogo() {
                 int escolhaFada;
                 cin >> escolhaFada;
 
-                if (escolhaFada > 0 && escolhaFada <= fadasDisponiveis.size()) {
+                try {
+                    if (escolhaFada <= 0 || escolhaFada > fadasDisponiveis.size()) {
+                        throw runtime_error("Escolha de fada inválida.");
+                    }
+
                     Personagem* fadaParaMissao = fadasDisponiveis[escolhaFada - 1];
 
                     cout << "\n" << fadaParaMissao->getNome() << " se prepara para a missão '" << missaoEscolhida->getTitulo() << "'!" << endl;
@@ -222,15 +226,17 @@ void iniciarHubDoJogo() {
                     if (!fadaParaMissao->estaVivo()) {
                         cout << "\nApesar da falha, a energia de Alfea te reanima." << endl;
                     }
+
                     fadaParaMissao->recuperarTudo();
                     cout << "\nRetornando ao Pátio de Alfea. Pressione Enter para continuar...";
                     cin.get(); cin.get();
                     limparTela();
 
-                } else {
-                    cout << "Escolha de fada inválida." << endl;
+                } catch (const exception& e) {
+                    cout << "Erro: " << e.what() << endl;
                 }
                 break;
+
             }
             case 2: {// VER STATUS
                 cout << "\nVer status de qual fada?" << endl;
