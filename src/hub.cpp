@@ -153,10 +153,14 @@ void iniciarHubDoJogo() {
 
                 if (idMissao == 0) break;
 
-                Missao* missaoEscolhida = diario.getMissao(idMissao);
-
-                if (!missaoEscolhida || missaoEscolhida->getEstado() != EstadoMissao::PENDENTE) {
-                    cout << "ID de missão inválido ou missão não disponível." << endl;
+                Missao* missaoEscolhida = nullptr;
+                try {
+                    missaoEscolhida = diario.getMissao(idMissao);
+                    if (!missaoEscolhida) {
+                        throw runtime_error("Missão não encontrada com o ID fornecido.");
+                    }
+                } catch (const exception& e) {
+                    cout << "Erro ao recuperar missão: " << e.what() << endl;
                     break;
                 }
 
