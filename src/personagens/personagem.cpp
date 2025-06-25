@@ -1,6 +1,9 @@
 #include "personagens/personagem.h"
 #include "habilidades/habilidade.h"
 #include <cmath> 
+#include <string> 
+
+using namespace std; 
 
 Personagem::~Personagem() {
     for (Habilidade* hab : habilidades) {
@@ -112,36 +115,43 @@ void Personagem::usarHabilidade(int indiceHabilidade, Personagem& alvo) {
 }
 
 void Personagem::atualizarTurno() {
-    // Processar efeitos de dano contínuo
-    for (int i = 0; i < efeitos.size(); ++i) {
-        if (efeitos[i].tipo == "dano") {
-            receberDano(efeitos[i].dano_por_turno);
-        }
-        efeitos[i].duracao--;
-        if (efeitos[i].duracao <= 0) {
-            efeitos.erase(efeitos.begin() + i);
-            --i;
+    // processando efeitos contínuos 
+    for (auto it = efeitos.begin(); it != efeitos.end(); ) {    
+        // se tiver palavra "dano" no tipo será válido 
+        if (it->tipo.find("dano") != string::npos) {
+            cout << nome << " sofre " << it->dano_por_turno << " de dano de '" << it->tipo << "'!" << endl;
+            receberDano(it->dano_por_turno);
+        } 
+        it->duracao--;
+        // se a duração acabou, remove o efeito da lista
+        if (it->duracao <= 0) {
+            cout << "O efeito '" << it->tipo << "' em " << nome << " acabou." << endl;
+            it = efeitos.erase(it); // erase() retorna o próximo iterador válido
+        } else {
+            ++it; // Se não removeu, avança para o próximo
         }
     }
 
-    // Processar buffs temporários
-    for (int i = 0; i < buffs.size(); ++i) {
-        buffs[i].duracao--;
+    // processar buffs temporários 
+    for (auto it_buff = buffs.begin(); it_buff != buffs.end(); ) {
+        it_buff->duracao--;
 
-        if (buffs[i].duracao <= 0) {
-            if (buffs[i].tipo == "defesa") {
-                defesa -= buffs[i].valor;
-                cout << nome << " perdeu o bônus de defesa de " << buffs[i].valor << "." << endl;
+        if (it_buff->duracao <= 0) {
+            cout << "O buff '" << it_buff->tipo << "' em " << nome << " acabou." << endl;
+            // Se o tipo do buff CONTÉM a palavra "defesa", remove o bônus de defesa.
+            if (it_buff->tipo.find("defesa") != string::npos) {
+                this->defesa -= it_buff->valor;
+                if (this->defesa < this->defesaBase) {
+                    this->defesa = this->defesaBase; // Garante que a defesa não fique menor que a base
+                }
+                cout << nome << " perdeu um bônus de defesa." << endl;
+            } 
+            else if (it_buff->tipo.find("reducao_custo_magia") != string::npos) {
+                cout << nome << " não tem mais redução no custo de magia." << endl;
             }
-            else if (buffs[i].tipo == "reducao_custo_magia") {
-                cout << nome << " perdeu o efeito de redução de custo de magia." << endl;
-            }
-            else if (buffs[i].tipo == "invisibilidade") {
-                cout << nome << " não está mais invisível." << endl;
-            }
-
-            buffs.erase(buffs.begin() + i);
-            --i;
+            it_buff = buffs.erase(it_buff);
+        } else {
+            ++it_buff;
         }
     }
 }
