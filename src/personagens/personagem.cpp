@@ -31,6 +31,12 @@ void Personagem::prepararParaNovoTurno() {
         defesa = defesaBase;
         estaDefendendo = false;
     }
+    // Recupera 10% da magia máxima a cada turno.
+    float regenMagia = this->magiaMaxima * 0.1f; 
+    this->magia += regenMagia;
+    if (this->magia > this->magiaMaxima) {
+        this->magia = this->magiaMaxima; // garante que não ultrapasse o máximo
+    }
     atualizarTurno();
 }
 

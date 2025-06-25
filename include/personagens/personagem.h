@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-//#include "habilidades/habilidade.h"
+#include "habilidades/ataqueBasico.h"
 class Habilidade;
 
 using namespace std;
@@ -56,7 +56,10 @@ public:
           defesaBase(defesaInicial),
           ataque_magico(ataqueMagicoInicial),
           velocidade(velocidadeInicial),
-          nivel(1), xpAtual(0), xpParaProximoNivel(100) {}
+          nivel(1), xpAtual(0), xpParaProximoNivel(100) 
+          {
+            habilidades.push_back(new AtaqueBasico());
+          }
 
     virtual ~Personagem();
 
