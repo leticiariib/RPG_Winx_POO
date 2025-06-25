@@ -2,9 +2,10 @@
 #include <iostream>
 
 EventoAleatorio::EventoAleatorio() {
-    rng.seed(random_device{}());
+    srand(static_cast<unsigned>(time(nullptr)));
     inicializarEventos();
 }
+
 
 void EventoAleatorio::inicializarEventos() {
     eventos.clear();
@@ -62,9 +63,10 @@ void EventoAleatorio::inicializarEventos() {
 }
 
 EventoAleatorio::Evento EventoAleatorio::sortearEvento() {
-    uniform_int_distribution<> dist(0, eventos.size() - 1);
-    return eventos[dist(rng)];
+    int indice = rand() % eventos.size(); 
+    return eventos[indice];
 }
+
 
 void EventoAleatorio::executarOpcao(const Opcao& opcao, Personagem& personagem) {
     if (opcao.impactoVida != 0) {

@@ -1,8 +1,8 @@
-#include "include\missoes\tempestadeEmZenith.h"
-#include "include\batalha.h"
-#include "include\personagens\inimigos\sentinelaEletrica.h"
-#include "include\personagens\inimigos\stormy.h"
-#include "include\inventario\armaduras\mantoDeEnchantrix.h" 
+#include "missoes\tempestadeEmZenith.h"
+#include "batalha.h"
+#include "personagens\inimigos\sentinelaEletrica.h"
+#include "personagens\inimigos\stormy.h"
+#include "inventario\armaduras\mantoDeEnchantrix.h" 
 #include <vector>
 #include <iostream>
 

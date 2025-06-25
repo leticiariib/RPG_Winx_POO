@@ -2,6 +2,8 @@
 #include <vector>
 #include <memory>
 #include <limits>
+#include <chrono>
+#include <thread>
 
 #include "hub.h"
 
@@ -94,10 +96,9 @@ void iniciarHubDoJogo() {
     // 1. INICIALIZAÇÃO DO JOGO (Acontece uma única vez)
     cout << "Bem-vinda ao RPG do Clube das Winx!" << endl;
 
-    // Criamos os inventários do jogador, que persistirão durante todo o jogo.
     Inventario<Pocao*> inventarioPocoes;
     Inventario<Armadura*> inventarioArmaduras;
-    inventarioPocoes.adicionarItem(new ElixirDaVida()); // iteem adicional pro jogador 
+    inventarioPocoes.adicionarItem(new ElixirDaVida());// iteem adicional pro jogador 
 
     // Criamos o diário de missões e o populamos com todas as missões do jogo.
     ControladorDeMissoes diario;
@@ -109,7 +110,7 @@ void iniciarHubDoJogo() {
     diario.adicionarMissao(new Missao_TempestadeEmZenith());
     diario.adicionarMissao(new Missao_CoracaoDeMagix());
 
-    // Criamos a "lista" de fadas disponíveis
+     // Criamos a "lista" de fadas disponíveis
     Bloom bloom;
     Stella stella;
     Flora flora;
@@ -142,7 +143,7 @@ void iniciarHubDoJogo() {
         limparTela();
 
         switch (escolhaMenu) {
-            case 1: { // QUADRO DE MISSÕES
+            case 1: {// QUADRO DE MISSÕES
                 diario.mostrarMissoesDisponiveis();
                 diario.mostrarMissoesAtivas();
 
@@ -154,40 +155,34 @@ void iniciarHubDoJogo() {
 
                 Missao* missaoEscolhida = diario.getMissao(idMissao);
 
-                // Validação da missão
                 if (!missaoEscolhida || missaoEscolhida->getEstado() != EstadoMissao::PENDENTE) {
                     cout << "ID de missão inválido ou missão não disponível." << endl;
                     break;
                 }
-                
-                // Pré-requisito simples: Missão 3 só aparece se a 2 for completa.
+
                 bool podeIniciar = true;
 
-                // 1. O pré-requisito SÓ se aplica se a missão escolhida for PRINCIPAL
                 if (missaoEscolhida->isPrincipal()) {
-                    // 2. Procura pela missão principal anterior, em vez de apenas id-1
                     Missao* missaoPrincipalAnterior = nullptr;
                     for (int idAnterior = idMissao - 1; idAnterior > 0; --idAnterior) {
                         Missao* missaoCandidata = diario.getMissao(idAnterior);
                         if (missaoCandidata && missaoCandidata->isPrincipal()) {
                             missaoPrincipalAnterior = missaoCandidata;
-                            break; // Encontrou a principal anterior, pode parar de procurar
+                            break;
                         }
                     }
 
-                    // 3. Se encontrou uma principal anterior, verifica seu estado
                     if (missaoPrincipalAnterior && missaoPrincipalAnterior->getEstado() != EstadoMissao::COMPLETA) {
                         cout << "Você precisa completar a missão principal '" 
-                            << missaoPrincipalAnterior->getTitulo() << "' primeiro!" << endl;
-                        podeIniciar = false; // Não pode iniciar
+                             << missaoPrincipalAnterior->getTitulo() << "' primeiro!" << endl;
+                        podeIniciar = false;
                     }
                 }
 
                 if (!podeIniciar) {
-                    break; // Volta para o menu do Hub
+                    break;
                 }
 
-                // ESCOLHA DO PERSONAGEM
                 cout << "\nEscolha uma fada para esta missão:" << endl;
                 for (int i = 0; i < fadasDisponiveis.size(); ++i) {
                     cout << i + 1 << ". " << fadasDisponiveis[i]->getNome() << " (Nível " << fadasDisponiveis[i]->getNivel() << ")" << endl;
@@ -198,16 +193,14 @@ void iniciarHubDoJogo() {
 
                 if (escolhaFada > 0 && escolhaFada <= fadasDisponiveis.size()) {
                     Personagem* fadaParaMissao = fadasDisponiveis[escolhaFada - 1];
-                    
+
                     cout << "\n" << fadaParaMissao->getNome() << " se prepara para a missão '" << missaoEscolhida->getTitulo() << "'!" << endl;
                     cout << "Pressione Enter para continuar...";
-                    cin.get();
+                    cin.get(); cin.get();
                     limparTela();
-                    
-                    // INICIANDO A MISSÃO
-                    // Usamos static_cast para chamar o método executar da classe específica da missão
+
                     if (idMissao == 1) {
-                         static_cast<Missao_SombrasEmAlfea*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
+                        static_cast<Missao_SombrasEmAlfea*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
                     } else if (idMissao == 2) {
                         static_cast<Missao_EcosDaCorrupcao*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
                     } else if (idMissao == 3) {
@@ -222,13 +215,12 @@ void iniciarHubDoJogo() {
                         static_cast<Missao_CoracaoDeMagix*>(missaoEscolhida)->executar(*fadaParaMissao, inventarioPocoes, inventarioArmaduras);
                     }
 
-                    // Lógica Pós-Missão: Recupera a fada para que ela esteja pronta para a próxima
                     if (!fadaParaMissao->estaVivo()) {
-                         cout << "\nApesar da falha, a energia de Alfea te reanima." << endl;
+                        cout << "\nApesar da falha, a energia de Alfea te reanima." << endl;
                     }
                     fadaParaMissao->recuperarTudo();
                     cout << "\nRetornando ao Pátio de Alfea. Pressione Enter para continuar...";
-                    cin.get();
+                    cin.get(); cin.get();
                     limparTela();
 
                 } else {
@@ -236,7 +228,7 @@ void iniciarHubDoJogo() {
                 }
                 break;
             }
-            case 2: { // VER STATUS
+            case 2: {// VER STATUS
                 cout << "\nVer status de qual fada?" << endl;
                 for (int i = 0; i < fadasDisponiveis.size(); ++i) {
                     cout << i + 1 << ". " << fadasDisponiveis[i]->getNome() << endl;
@@ -249,14 +241,14 @@ void iniciarHubDoJogo() {
                     limparTela();
                     fadasDisponiveis[escolhaFadaStatus - 1]->mostrarStatusCompleto();
                     cout << "\nPressione Enter para voltar ao menu...";
-                    cin.get(); // Pausa a tela
+                    cin.get(); cin.get();
                     limparTela();
                 } else {
                     cout << "Escolha inválida." << endl;
                 }
                 break;
             }
-            case 3: { // SAIR
+            case 3: {//sair
                 cout << "Obrigada por jogar! Até a próxima!" << endl;
                 jogoRodando = false;
                 break;
@@ -264,9 +256,8 @@ void iniciarHubDoJogo() {
             default:
                 cout << "Opção inválida! Por favor, tente novamente." << endl;
                 break;
-        } // Fim do switch
-    } // Fim do while
-
-    // O destrutor do 'diario' e dos 'inventarios' será chamado automaticamente,
+        }//fim switch
+    }//fim while 
+     // O destrutor do 'diario' e dos 'inventarios' será chamado automaticamente,
     // limpando a memória das missões e itens criados com 'new'.
 }

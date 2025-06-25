@@ -1,5 +1,5 @@
-#include "include\personagens\inimigos\sentinelaEletrica.h"
-#include "include\habilidades\danoDireto\raioDeEnergia.h" 
+#include "personagens\inimigos\sentinelaEletrica.h"
+#include "habilidades\danoDireto\raioDeEnergia.h" 
 
 SentinelaEletrica::SentinelaEletrica()
     // caracteristicas: status equilibrados, um soldado robótico padrão.

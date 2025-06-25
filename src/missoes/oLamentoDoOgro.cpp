@@ -1,7 +1,7 @@
-#include "include\missoes\oLamentoDoOgro.h"
-#include "include\batalha.h"
-#include "include\personagens\inimigos\knut.h"
-#include "include\inventario\pocoes\elixirDaVida.h"
+#include "missoes\oLamentoDoOgro.h"
+#include "batalha.h"
+#include "personagens\inimigos\knut.h"
+#include "inventario\pocoes\elixirDaVida.h"
 #include <vector>
 #include <iostream>
 

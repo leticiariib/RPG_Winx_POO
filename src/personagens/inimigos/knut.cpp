@@ -1,5 +1,5 @@
-#include "include\personagens\inimigos\knut.h"
-#include "include\habilidades\danoDireto\clavaEsmagadora.h"
+#include "personagens\inimigos\knut.h"
+#include "habilidades\danoDireto\clavaEsmagadora.h"
 
 Knut::Knut()
     // caracteristicas de Mini-Chefe: Vida e Ataque altos, Defesa decente, mas lento.

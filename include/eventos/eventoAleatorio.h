@@ -3,22 +3,25 @@
 
 #include <string>
 #include <vector>
-#include <random>
+#include <cstdlib> 
+#include <ctime>  
 #include "personagens/personagem.h"
+
+using namespace std;
 
 class EventoAleatorio {
 public:
     struct Opcao {
-        std::string descricao;
+        string descricao;
         int impactoVida = 0;
         int impactoMagia = 0;
-        std::string mensagemFinal;
+        string mensagemFinal;
     };
 
     struct Evento {
-        std::string titulo;
-        std::string descricao;
-        std::vector<Opcao> opcoes;
+        string titulo;
+        string descricao;
+        vector<Opcao> opcoes;
     };
 
     EventoAleatorio();
@@ -27,8 +30,7 @@ public:
     void executarOpcao(const Opcao& opcao, Personagem& personagem);
 
 private:
-    std::vector<Evento> eventos;
-    std::mt19937 rng;
+    vector<Evento> eventos;
     void inicializarEventos();
 };
 

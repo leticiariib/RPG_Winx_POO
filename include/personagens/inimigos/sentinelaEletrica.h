@@ -1,7 +1,7 @@
 #ifndef SENTINELAELETRICA_H
 #define SENTINELAELETRICA_H
 
-#include "include\personagens\inimigo.h"
+#include "personagens/inimigo.h"
 
 class SentinelaEletrica : public Inimigo {
 public:
